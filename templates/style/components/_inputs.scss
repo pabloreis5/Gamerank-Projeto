@@ -2,10 +2,12 @@
 // @import '../../components/inputs';
 
 @mixin input-default(){
+    width: 75%;
+
     font-family: "Poppins";
+    
     padding: 0.4rem 0.4rem 0.4rem 1.4rem;
     margin-left: 0.6rem;
-    width: 75%;
 
     &::placeholder {
         color: gray;

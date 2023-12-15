@@ -104,10 +104,10 @@ a:hover, button:hover {
   margin-top: 1.5rem;
 }
 .login__form fieldset input {
+  width: 75%;
   font-family: "Poppins";
   padding: 0.4rem 0.4rem 0.4rem 1.4rem;
   margin-left: 0.6rem;
-  width: 75%;
 }
 .login__form fieldset input::-moz-placeholder {
   color: gray;
@@ -128,4 +128,68 @@ a:hover, button:hover {
   border: none;
   border-radius: 3%;
   transition: 0.5s;
+}
+.login__form fieldset a {
+  font-family: "Press Start 2P";
+  color: #2BF6FA;
+  margin-left: 1.5rem;
+}
+
+.register {
+  background-color: #121212;
+}
+.register__form {
+  display: flex;
+  align-items: center;
+  height: 100vh; /* ocupa a página inteira*/
+}
+.register__form fieldset {
+  width: 50%;
+  margin-bottom: 4rem;
+  padding-left: 6rem;
+}
+.register__form fieldset h1 {
+  font-family: "Press Start 2P";
+  font-size: 2.8rem;
+  color: #2BF6FA;
+  margin-bottom: 0.7rem;
+}
+.register__form fieldset label {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 1.4rem;
+  margin-top: 1.5rem;
+}
+.register__form fieldset input {
+  width: 75%;
+  font-family: "Poppins";
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+  margin-left: 0.6rem;
+}
+.register__form fieldset input::-moz-placeholder {
+  color: gray;
+}
+.register__form fieldset input::placeholder {
+  color: gray;
+}
+.register__form fieldset button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
+}
+.register__form fieldset a {
+  font-family: "Press Start 2P";
+  color: #2BF6FA;
+  margin-left: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

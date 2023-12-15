@@ -46,6 +46,13 @@
                 margin-top: 4rem;
                 @include btn-gradient();
             }
+
+            a {
+                font-family: $title-gamerank;
+                color: $cyan-gamerank;
+
+                margin-left: 1.5rem;
+            }
         }
     }
 }
