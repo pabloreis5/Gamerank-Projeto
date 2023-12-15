@@ -86,7 +86,8 @@ a:hover, button:hover {
 }
 .login__form fieldset {
   width: 50%;
-  padding-left: 4rem;
+  margin-bottom: 4rem;
+  padding-left: 6rem;
 }
 .login__form fieldset h1 {
   font-family: "Press Start 2P";
@@ -113,4 +114,18 @@ a:hover, button:hover {
 }
 .login__form fieldset input::placeholder {
   color: gray;
+}
+.login__form fieldset button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
 }/*# sourceMappingURL=style.css.map */

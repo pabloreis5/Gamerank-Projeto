@@ -13,7 +13,8 @@
 
         fieldset {
             width: 50%;
-            padding-left: 4rem;
+            margin-bottom: 4rem;
+            padding-left: 6rem;
 
             h1 {                
                 font-family: $title-gamerank;
@@ -38,6 +39,12 @@
 
             input {
                 @include input-default();
+            }
+
+            button {
+            
+                margin-top: 4rem;
+                @include btn-gradient();
             }
         }
     }
