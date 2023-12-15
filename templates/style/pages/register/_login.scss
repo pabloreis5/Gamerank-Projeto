@@ -1,0 +1,44 @@
+@import '../../abstract/variables';
+@import '../../components/inputs';
+@import '../../components/btns';
+
+.login {
+    background-color: $bg-gamerank;
+
+    &__form {
+        display: flex;
+        align-items: center;
+
+        height: 100vh; /* ocupa a página inteira*/
+
+        fieldset {
+            width: 50%;
+            padding-left: 4rem;
+
+            h1 {                
+                font-family: $title-gamerank;
+                font-size: 2.8rem;
+
+                color: $cyan-gamerank;
+
+                margin-bottom: .7rem;
+            }
+
+            label {
+                width: 100%;
+
+                font-family: $text-default;
+                font-size: 1.3rem;
+
+                color: white;
+
+                margin-bottom: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            input {
+                @include input-default();
+            }
+        }
+    }
+}
