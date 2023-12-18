@@ -193,3 +193,23 @@ a:hover, button:hover {
   color: #2BF6FA;
   margin-left: 1.5rem;
 }/*# sourceMappingURL=style.css.map */
+
+.login__form fieldset button,
+.register__form fieldset button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.05); /* Adiciona um pequeno zoom ao passar o mouse */
+  }
+}
