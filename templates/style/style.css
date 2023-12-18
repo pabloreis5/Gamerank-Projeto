@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  font-size: 16px;
 }
 
 ol, ul {
@@ -211,5 +212,23 @@ a:hover, button:hover {
 
   &:hover {
     transform: scale(1.05); /* Adiciona um pequeno zoom ao passar o mouse */
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+      font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  /* Altera o texto do botão para "OK" apenas em telas menores */
+  button {
+      font-size: 0; /* Esconde o texto original */
+      background-color: #007bff; /* Altera a cor de fundo para azul (cor padrão do botão de login no Bootstrap) */
+  }
+
+  button::before {
+      content: "OK"; /* Adiciona o texto "OK" ao botão */
+      font-size: 16px; /* Define o tamanho da fonte para o texto "OK" */
+      color: white; /* Define a cor do texto como branco */
   }
 }
