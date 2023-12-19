@@ -17,13 +17,13 @@ Bem-vindo à Página de Rankeamento de Jogos, uma aplicação para visualizar e 
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/pagina-rankeamento-jogos.git
+    git clone https://github.com/pabloreis5/Gamerank-Projeto.git
     ```
 
 2. Entre no diretório do projeto:
 
     ```bash
-    cd pagina-rankeamento-jogos
+    cd Gamerank-Projeto
     ```
 
 3. Execute a aplicação:
