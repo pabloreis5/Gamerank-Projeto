@@ -33,7 +33,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  font-size: 16px;
 }
 
 ol, ul {
@@ -193,42 +192,26 @@ a:hover, button:hover {
   font-family: "Press Start 2P";
   color: #2BF6FA;
   margin-left: 1.5rem;
-}/*# sourceMappingURL=style.css.map */
+}
 
-.login__form fieldset button,
-.register__form fieldset button {
-  margin-top: 4rem;
-  display: block;
-  width: 35%;
-  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+.home header {
+  background-color: #121212;
+}
+.home header nav {
   font-family: "Poppins";
-  text-align: center;
-  text-decoration: none;
+  padding: 1rem;
+}
+.home header nav a {
   color: white;
-  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
-  border: none;
-  border-radius: 3%;
-  transition: 0.5s;
-
-  &:hover {
-    transform: scale(1.05); /* Adiciona um pequeno zoom ao passar o mouse */
-  }
+  margin-left: 3.3rem;
+  font-size: 0.8rem;
+  margin-top: -0.3rem;
 }
-
-@media (max-width: 767px) {
-  body {
-      font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
-  }
-
-  /* Altera o texto do botão para "OK" apenas em telas menores */
-  button {
-      font-size: 0; /* Esconde o texto original */
-      background-color: #007bff; /* Altera a cor de fundo para azul (cor padrão do botão de login no Bootstrap) */
-  }
-
-  button::before {
-      content: "OK"; /* Adiciona o texto "OK" ao botão */
-      font-size: 16px; /* Define o tamanho da fonte para o texto "OK" */
-      color: white; /* Define a cor do texto como branco */
-  }
+.home header nav a.active {
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid #2BF6FA;
 }
+.home main {
+  background-color: #121212;
+  height: 94.4vh;
+}/*# sourceMappingURL=style.css.map */
