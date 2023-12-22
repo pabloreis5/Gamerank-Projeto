@@ -25,7 +25,6 @@ const typeWhriter = (title, redirection)=> {
             }, 140 * i)
         });
 
-
     } catch (erro) {
         console.log(erro)
     }
