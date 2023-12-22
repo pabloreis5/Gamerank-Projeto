@@ -22,6 +22,9 @@ def home():
 def ranking():
     return render_template('html/pages/ranking.html')
 
+# @app.route('/logo')
+# def logo():
+#     return render_template('html/pages/ranking.html')
 
 
 if __name__ == '__main__':

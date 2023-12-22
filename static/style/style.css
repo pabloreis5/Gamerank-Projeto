@@ -95,6 +95,20 @@ a:hover, button:hover {
   color: #2BF6FA;
   margin-bottom: 0.7rem;
 }
+.login__form fieldset h1::after {
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation: pisca 0.7s infinite;
+}
+@keyframes pisca {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .login__form fieldset label {
   width: 100%;
   font-family: "Poppins";
@@ -153,6 +167,20 @@ a:hover, button:hover {
   font-size: 2.8rem;
   color: #2BF6FA;
   margin-bottom: 0.7rem;
+}
+.register__form fieldset h1::after {
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation: pisca 0.7s infinite;
+}
+@keyframes pisca {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 .register__form fieldset label {
   width: 100%;
