@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Gamerank!</title>
 </head>
-<body class="home base">
+<body class="base">
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -20,13 +20,13 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li>
-                            <a class="active" aria-current="page" href="{{url_for('home')}}">Tela inicial</a>
+                            <a class="{{is_active('home')}}" aria-current="page" href="{{url_for('home')}}">Tela inicial</a>
                         </li>
                         <li>
-                            <a href="{{url_for('categories')}}">Categorias</a>
+                            <a class="{{is_active('categories')}}" href="{{url_for('categories')}}">Categorias</a>
                         </li>
                         <li>
-                            <a href="{{url_for('ranking')}}">Ranqueamento</a>
+                            <a class="{{is_active('ranking')}}" href="{{url_for('ranking')}}">Ranqueamento</a>
                         </li>
                     </ul>
 

@@ -222,24 +222,24 @@ a:hover, button:hover {
   margin-left: 1.5rem;
 }
 
-.home header {
+.base header {
   background-color: #121212;
 }
-.home header nav {
+.base header nav {
   font-family: "Poppins";
   padding: 1rem;
 }
-.home header nav a {
+.base header nav a {
   color: white;
   margin-left: 3.3rem;
   font-size: 0.8rem;
   margin-top: -0.3rem;
 }
-.home header nav a.active {
+.base header nav a.active {
   padding-bottom: 0.5rem;
   border-bottom: 4px solid #2BF6FA;
 }
-.home main {
+.base main {
   background-color: #121212;
   height: 94.4vh;
 }/*# sourceMappingURL=style.css.map */
