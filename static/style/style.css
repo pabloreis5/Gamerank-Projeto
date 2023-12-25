@@ -222,28 +222,194 @@ a:hover, button:hover {
   margin-left: 1.5rem;
 }
 
-.base header {
+.home header {
   background-color: #121212;
 }
-.base header nav {
+.home header nav {
   font-family: "Poppins";
   padding: 1rem;
 }
-.base header nav a {
+.home header nav a {
   color: white;
   margin-left: 3.3rem;
   font-size: 0.8rem;
   margin-top: -0.3rem;
 }
-.base header nav a.active {
+.home header nav a.active {
   padding-bottom: 0.5rem;
   border-bottom: 4px solid #2BF6FA;
 }
-.base main {
+.home header nav a.active-profile {
+  color: #2BF6FA;
+}
+.home main {
   background-color: #121212;
   height: 94.4vh;
-}/*# sourceMappingURL=style.css.map */
-
-.base {
-  background-color: #121212;
 }
+
+.ranking {
+  height: 100%;
+  padding: 2rem;
+}
+.ranking h1 {
+  font-family: "Poppins";
+  font-size: 1.5rem;
+  color: white;
+}
+.ranking table {
+  width: 100%;
+  margin-top: 3rem;
+  font-family: "Poppins";
+  color: white;
+}
+.ranking table thead th {
+  padding-left: 1rem;
+  padding-bottom: 1.4rem;
+}
+.ranking table tbody tr {
+  height: 5rem;
+  background-color: #1E1E1E;
+}
+.ranking table tbody tr td:nth-child(1) {
+  width: 10%;
+  padding-left: 2.5rem;
+  padding-top: -1.5rem;
+}
+.ranking table tbody tr td:nth-child(2) {
+  width: 10%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.ranking table tbody tr td:nth-child(2) img {
+  height: 55px;
+  margin-top: 0.3rem;
+  margin-bottom: -1.5rem;
+}
+.ranking table tbody tr td:nth-child(3) {
+  width: 30%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.ranking table tbody tr td:nth-child(4) {
+  width: 50%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.profile {
+  height: 100%;
+  padding: 1rem;
+}
+.profile__infos {
+  height: auto;
+  width: 100%;
+  background-color: #1E1E1E;
+}
+.profile__infos form {
+  display: flex;
+  margin-bottom: 5.5rem;
+}
+.profile__infos form img {
+  height: 10rem;
+  width: 14rem;
+  margin-left: 1rem;
+}
+.profile__infos form fieldset {
+  width: 50%;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.profile__infos form fieldset label {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 1.4rem;
+  margin-top: 1.8rem;
+  margin-left: 0.6rem;
+}
+.profile__infos form fieldset input {
+  width: 75%;
+  font-family: "Poppins";
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+  margin-left: 0.6rem;
+}
+.profile__infos form fieldset input::-moz-placeholder {
+  color: gray;
+}
+.profile__infos form fieldset input::placeholder {
+  color: gray;
+}
+.profile__infos button:nth-child(1) {
+  display: block;
+  width: 10%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  margin-right: 1.5rem;
+  color: white;
+  background-color: #FF0000;
+  font-family: "Poppins";
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+}
+.profile__infos button:nth-child(2) {
+  display: block;
+  width: 10%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  color: white;
+  background-color: #00FF19;
+  margin-right: 2.5rem;
+  font-family: "Poppins";
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+}
+.profile__wishlist {
+  margin-top: 2.3rem;
+}
+.profile__wishlist h1 {
+  font-family: "Poppins";
+  font-size: 1.5rem;
+  color: white;
+}
+.profile__wishlist table {
+  width: 100%;
+  margin-top: 3rem;
+  font-family: "Poppins";
+  font-size: 0.8rem;
+  color: white;
+}
+.profile__wishlist table thead td {
+  padding-left: 1rem;
+  padding-bottom: 1.4rem;
+}
+.profile__wishlist table tbody tr {
+  height: 5rem;
+  background-color: #1E1E1E;
+}
+.profile__wishlist table tbody tr td:nth-child(1) {
+  width: 10%;
+  padding-left: 0.5rem;
+  padding-top: -1.5rem;
+}
+.profile__wishlist table tbody tr td:nth-child(2) {
+  width: 10%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.profile__wishlist table tbody tr td:nth-child(2) img {
+  height: 55px;
+  margin-top: 0.3rem;
+  margin-bottom: -1.5rem;
+}
+.profile__wishlist table tbody tr td:nth-child(3) {
+  width: 30%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.profile__wishlist table tbody tr td:nth-child(4) {
+  width: 50%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}/*# sourceMappingURL=style.css.map */

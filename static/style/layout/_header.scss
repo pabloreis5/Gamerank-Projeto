@@ -18,5 +18,9 @@
             padding-bottom: 0.5rem;
             border-bottom: 4px solid $cyan-gamerank;
         }
+
+        a.active-profile {
+            color: $cyan-gamerank;
+        }
     }
 }
