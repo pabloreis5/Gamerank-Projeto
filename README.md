@@ -13,19 +13,20 @@
 
 ## Funcionalidades
 
-- [x]**Cadastro de Usuário:** Cadastre-se para acessar recursos exclusivos, como avaliar jogos, deixar comentários e personalizar sua experiência.
+- [x]Cadastro de Usuário: Cadastre-se para acessar recursos exclusivos, como avaliar jogos, deixar comentários e personalizar sua experiência.
 
-- [x]**Visualização de Rankeamento:** Veja uma lista de jogos ranqueados com base em diferentes critérios.
+- [x]Visualização de Rankeamento: Veja uma lista de jogos ranqueados com base em diferentes critérios.
 
-- [x]**Detalhes do Jogo:** Clique em um jogo para obter mais informações, como pontuações, avaliações e comentários.
+- [x]Detalhes do Jogo: Clique em um jogo para obter mais informações, como pontuações, avaliações e comentários.
 
-- [x]**Pesquisa de Jogos:** Utilize a barra de pesquisa para encontrar jogos específicos rapidamente.
+- [x]Pesquisa de Jogos: Utilize a barra de pesquisa para encontrar jogos específicos rapidamente.
 
-- [x]**Filtros Avançados:** Filtre os jogos por gênero, plataforma, ou qualquer outro critério relevante.
+- [x]Filtros Avançados: Filtre os jogos por gênero, plataforma, ou qualquer outro critério relevante.
  
 
 ## Layout
  ![tela_cadastro](./static/imgs/tela_cadastro.png)
+ 
  ![tela_login](./static/imgs/tela_login.png)
  <!-- podemos colocar as outras telas do projeto tbm para mostrar mais detalhes -->
 
