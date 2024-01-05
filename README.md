@@ -1,18 +1,37 @@
 # GameRank
+![GameRank](./static/imgs/gamerank.png)
 
-Bem-vindo à Página de Rankeamento de Jogos, uma aplicação para visualizar e classificar jogos.
+ Bem-vindo à Página de Rankeamento de Jogos, uma aplicação para visualizar e classificar jogos.
+
+## Índice
+ - <a href= "#Funcionalidades">Funcionalidades</a>
+ - <a href= "#layout">Layout</a>
+ - <a href= "#rodar">Como rodar esse projeto?</a>
+ - <a href= "#tecnologias?">Tecnologias Utilizadas?</a>
+ - <a href= "#licença">Licença</a>
+
 
 ## Funcionalidades
 
-- **Visualização de Rankeamento:** Veja uma lista de jogos ranqueados com base em diferentes critérios.
+- **Cadastro e login do Usuário:** Crie sua conta em apenas alguns passos simples e faça login de forma descomplicada, proporcionando a você uma entrada suave e rápida na nossa plataforma.
 
-- **Detalhes do Jogo:** Clique em um jogo para obter mais informações, como pontuações, avaliações e comentários.
+- **Navegue por Categorias:** Explore jogos em diversas categorias.
 
-- **Pesquisa de Jogos:** Utilize a barra de pesquisa para encontrar jogos específicos rapidamente.
+- **Visualização de Rankeamento:** Veja uma lista de jogos ranqueados com base em diferentes critérios. Explore resumos detalhados, incluindo nome, descrição e ano de lançamento. 
 
-- **Filtros Avançados:** Filtre os jogos por gênero, plataforma, ou qualquer outro critério relevante.
+- **Perfil Personalizado:** Visualize informações do perfil e gerencie sua lista de desejos.
 
-## Como Usar
+- **Detalhes do Jogo em Destauqe:** Explore avaliações, comentários e informações abrangentes de cada jogo.
+
+ 
+
+## Layout
+ ![telacadastro](./static/imgs/tela_cadastro.png)
+
+ ![telalogin](./static/imgs/tela_login.png)
+ <!-- podemos colocar as outras telas do projeto tbm para mostrar mais detalhes -->
+
+## Como rodar esse projeto?
 
 1. Clone o repositório:
 
@@ -30,10 +49,22 @@ Bem-vindo à Página de Rankeamento de Jogos, uma aplicação para visualizar e 
 
     ```bash
     python run.py
-    ```
+    ``` 
+ 
+    
+4. Abra o navegador e acesse [http://localhost:5000](http://localhost:5000).  
 
-4. Abra o navegador e acesse [http://localhost:5000](http://localhost:5000).
+## Tecnologias Utilizadas
+1. [SCSS](https://sass-lang.com/)
 
+2. [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+
+3. [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+
+4. [Python](https://www.python.org/)
+
+5. [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 ## Licença
+Este projeto é licenciado sob a Licença MIT - Veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+   
 
-Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
