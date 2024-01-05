@@ -412,4 +412,41 @@ a:hover, button:hover {
 .profile__wishlist table tbody tr td:nth-child(4) {
   width: 50%;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.categories {
+  height: 100%;
+  padding: 1rem;
+}
+.categories h1 {
+  font-family: "Poppins";
+  font-size: 1.5rem;
+  color: white;
+}
+.categories h4 {
+  font-family: "Poppins";
+  color: white;
+  margin-top: 2.5rem;
+  margin-left: 2.6rem;
+  margin-bottom: 1.5rem;
+}
+.categories .game {
+  height: 180px;
+  width: 130px;
+  margin-right: 2rem;
+}
+.categories .game img {
+  height: 180px;
+  width: 130px;
+  border-radius: 10% 10% 0 0;
+}
+.categories .game__body {
+  width: 100%;
+}
+.categories .game__body p {
+  font-size: 1rem;
+  font-family: "Poppins";
+  text-align: center;
+  color: white;
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
