@@ -13,15 +13,16 @@
 
 ## Funcionalidades
 
-- **Cadastro de Usuário:** Cadastre-se para acessar recursos exclusivos, como avaliar jogos, deixar comentários e personalizar sua experiência.
+- **Cadastro e login do Usuário:** Crie sua conta em apenas alguns passos simples e faça login de forma descomplicada, proporcionando a você uma entrada suave e rápida na nossa plataforma.
 
-- **Visualização de Rankeamento:** Veja uma lista de jogos ranqueados com base em diferentes critérios.
+- **Navegue por Categorias:** Explore jogos em diversas categorias.
 
-- **Detalhes do Jogo:** Clique em um jogo para obter mais informações, como pontuações, avaliações e comentários.
+- **Visualização de Rankeamento:** Veja uma lista de jogos ranqueados com base em diferentes critérios. Explore resumos detalhados, incluindo nome, descrição e ano de lançamento. 
 
-- **Pesquisa de Jogos:** Utilize a barra de pesquisa para encontrar jogos específicos rapidamente.
+- **Perfil Personalizado:** Visualize informações do perfil e gerencie sua lista de desejos.
 
-- **Filtros Avançados:** Filtre os jogos por gênero, plataforma, ou qualquer outro critério relevante.
+- **Detalhes do Jogo em Destauqe:** Explore avaliações, comentários e informações abrangentes de cada jogo.
+
  
 
 ## Layout
