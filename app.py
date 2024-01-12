@@ -8,7 +8,7 @@ def login():
 
 @app.context_processor
 def inject_active():
-    def is_active(endpoint): #recebe o endpoint (rota) e verifica se é igual o endpoint atual, se for ele retorna a classe active, se não retorna vazio
+    def is_active(endpoint): #recebe o endpoint (rota) e verifica se é igual o endpoint atual, se for ele retorna a classeactive, se não retorna vazio
         return 'active' if request.endpoint == endpoint else ''
     return dict(is_active=is_active)
 
