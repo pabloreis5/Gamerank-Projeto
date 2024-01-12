@@ -36,6 +36,5 @@ def profile():
 # def logo():
 #     return render_template('html/pages/ranking.html')
 
-
 if __name__ == '__main__':
     app.run(debug=True)
