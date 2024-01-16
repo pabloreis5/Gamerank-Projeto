@@ -8,9 +8,9 @@ app = Flask(__name__, static_url_path='/static')
 db_config = {
     'host': '127.0.0.1',
     'port': 3306,
-    'user': 'root',
-    'password': 'Okaeri633@',
-    'database': 'BD GAMERANK'
+    'user': 'gamerank',
+    'password': '6337311',
+    'database': 'gamerank_bd'
 }
 
 # Função para criar uma conexão com o banco de dados
