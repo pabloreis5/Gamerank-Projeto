@@ -6,16 +6,40 @@ app = Flask(__name__, static_url_path='/static')
 
 # Configuração do banco de dados
 db_config = {
-    'host': 'servidor',
-    'user': 'usuario',
-    'password': 'senha',
-    'database': 'nome_do_banco_de_dados'
+    'host': '127.0.0.1',
+    'port': 3306,
+    'user': 'root',
+    'password': 'Okaeri633@',
+    'database': 'BD GAMERANK'
 }
 
 # Função para criar uma conexão com o banco de dados
 def get_db_connection():
     conexao = mysql.connector.connect(**db_config)
     return conexao
+
+def test_db_connection():
+    conexao = None
+    try:
+        conexao = get_db_connection()
+        cursor = conexao.cursor()
+        cursor.execute("SELECT 1")
+        result = cursor.fetchone()
+        if result:
+            return "Conexão com o banco de dados foi bem-sucedida."
+        else:
+            return "Conexão com o banco de dados falhou."
+    except mysql.connector.Error as e:
+        return f"Erro ao conectar ao banco de dados: {e}"
+    finally:
+        if conexao and conexao.is_connected():
+            cursor.close()
+            conexao.close()
+
+# Teste a conexão
+print(test_db_connection())
+
+
 
 
 
