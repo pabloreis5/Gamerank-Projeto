@@ -1,6 +1,23 @@
 from flask import Flask, render_template, request
+import mysql.connector
+
 
 app = Flask(__name__, static_url_path='/static')
+
+# Configuração do banco de dados
+db_config = {
+    'host': 'servidor',
+    'user': 'usuario',
+    'password': 'senha',
+    'database': 'nome_do_banco_de_dados'
+}
+
+# Função para criar uma conexão com o banco de dados
+def get_db_connection():
+    conexao = mysql.connector.connect(**db_config)
+    return conexao
+
+
 
 @app.route('/')
 def login():
