@@ -1,44 +1,15 @@
 from flask import Flask, render_template, request
-import mysql.connector
+import sqlite3
 
 
 app = Flask(__name__, static_url_path='/static')
 
-# Configuração do banco de dados
-db_config = {
-    'host': '127.0.0.1',
-    'port': 3306,
-    'user': 'gamerank',
-    'password': '6337311',
-    'database': 'gamerank_bd'
-}
+conn = sqlite3.connect('bd_gamerank.db')
 
-# Função para criar uma conexão com o banco de dados
-def get_db_connection():
-    conexao = mysql.connector.connect(**db_config)
-    return conexao
+# Cria um cursor
+cursor = conn.cursor()
 
-def test_db_connection():
-    conexao = None
-    try:
-        conexao = get_db_connection()
-        cursor = conexao.cursor()
-        cursor.execute("SELECT 1")
-        result = cursor.fetchone()
-        if result:
-            return "Conexão com o banco de dados foi bem-sucedida."
-        else:
-            return "Conexão com o banco de dados falhou."
-    except mysql.connector.Error as e:
-        return f"Erro ao conectar ao banco de dados: {e}"
-    finally:
-        if conexao and conexao.is_connected():
-            if 'cursor' in locals():
-                cursor.close()
-            conexao.close()
 
-# Teste a conexão
-print(test_db_connection())
 
 
 
