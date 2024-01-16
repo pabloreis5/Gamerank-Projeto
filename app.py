@@ -33,7 +33,8 @@ def test_db_connection():
         return f"Erro ao conectar ao banco de dados: {e}"
     finally:
         if conexao and conexao.is_connected():
-            cursor.close()
+            if 'cursor' in locals():
+                cursor.close()
             conexao.close()
 
 # Teste a conexão
