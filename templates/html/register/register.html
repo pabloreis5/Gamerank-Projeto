@@ -13,11 +13,30 @@
 </head>
 <body class="register">
     {%block content%}
-    {%for message in get_flashed_messages()%}
-        <div class="alert alert-warning" role="alert">
-            {{message}}
-        </div>
-    {%endfor%}
+        {%for message in get_flashed_messages()%}
+            <div class="alert alert-warning" role="alert">
+                {{ message }}
+            </div>
+<!--         {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'warning' in message %}
+                        <div class="alert alert-warning" role="alert">
+                            {{ message }}
+                        </div>
+                    {% elif 'error' in message %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                        </div>
+                    {% elif 'success' in message %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {%endif%}
+        {%endwith%} -->
+        {%endfor%}
     {%endblock content%}
     <form class="register__form" method="POST" action="{{ url_for('register') }}">
 

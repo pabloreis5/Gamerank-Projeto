@@ -9,15 +9,15 @@
         
         <div class="d-flex justify-content-center flex-wrap">
     
-            <div class="game">
-                <img src="https://i.im.ge/2024/01/09/3jxaFa.call-of-duty.th.png " class="card-img-top">
+            <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="{{ url_for('static', filename='imgs/reddead.png') }}" class="card-img-top">
                 
                 <div class="game__body">
                   <p>Red Dead  II</p>
                 </div>
             </div>
     
-            <div class="game">
+            <div class="game" >
                 <img src="{{ url_for('static', filename='imgs/callofduty.png') }}" class="card-img-top">
                 
                 <div class="game__body">
@@ -105,6 +105,54 @@
     </div>
 
     <div class="race">
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      
+      <div class="modal-dialog">   
+        <div class="modal__container">
+          <div class="modal__header">
+
+            <img src="{{ url_for('static', filename='imgs/logo.png') }}" alt="logo">
+            <h1 class="modal-title fs-5 ms-5 mt-3" id="exampleModalLabel">Red Dead Redemption II</h1>
+
+          </div>
+
+          <div class="modal__body">
+            
+            <div class="functionality">
+              <img src="{{ url_for('static', filename='imgs/reddead.png') }}">
+
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Avalie</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+
+              <p>+ lista de desejo</p>
+            </div>
+
+            <div class="description">
+              <p>
+                Red Dead Redemption é uma epopeia no Velho Oeste, onde John Marston busca redenção. Gráficos impressionantes, mundo aberto vasto, tiroteios intensos, caça e uma narrativa envolvente.Escolhas morais moldam o destino, enquanto a trilha sonora e a vida selvagem enriquecem a imersão, criando uma experiência única e marcante.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="modal__footer">
+
+            <div class="comments">
+
+            </div>
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
 
     </div>
 
