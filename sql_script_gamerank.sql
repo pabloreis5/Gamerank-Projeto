@@ -4,7 +4,7 @@ DEFAULT COLLATE utf8_general_ci;
 
 USE gamerank;
 
-#Cria tabela de Jogos
+-- Cria tabela de Jogos
 CREATE TABLE jogos (
 	id INT NOT NULL AUTO_INCREMENT,
     nome varchar(50) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE jogos (
 ) DEFAULT CHARSET = utf8;
 
 
-#Cria tabela de Usuário
+-- Cria tabela de Usuário
 CREATE TABLE usuario (
 	id INT NOT NULL AUTO_INCREMENT,
     nome varchar(50) NOT NULL, 
@@ -27,7 +27,7 @@ CREATE TABLE usuario (
 ) DEFAULT CHARSET = utf8;
 
 
-#Cria tabela de Avaliações
+-- Cria tabela de Avaliações
 CREATE TABLE avaliacao (
 	id INT NOT NULL AUTO_INCREMENT,
     nota INT not null,
@@ -40,13 +40,10 @@ CREATE TABLE avaliacao (
 ) DEFAULT CHARSET = utf8;
 
 
-#Cria tabela de Lista de Desejos
+-- Cria tabela de Lista de Desejos
 CREATE TABLE lista_de_desejos (
 	id_jogo INT NOT NULL,
     id_usuario INT NOT NULL,
 	FOREIGN KEY(id_jogo) REFERENCES jogos(id),
     FOREIGN KEY(id_usuario) REFERENCES usuario(id)
 ) DEFAULT CHARSET = utf8;
-
-
-
