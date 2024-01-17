@@ -122,9 +122,8 @@ def profile():
 
 @app.route('/bd')
 def view_bd():
-    for n in get_users_names():
-        result = n[0]
-        
+    users = get_users_names()
+    return render_template('html/pages/view_bd.html', users=users)
 
 
 # @app.route('/logo')

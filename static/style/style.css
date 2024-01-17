@@ -76,6 +76,13 @@ a:hover, button:hover {
   cursor: pointer;
 }
 
+.popular-reviews h1 {
+  font-family: "Poppins";
+  font-size: 1.5rem;
+  color: white;
+  padding: 2rem;
+}
+
 .login {
   background-color: #121212;
 }
