@@ -98,9 +98,17 @@ def ranking():
 def profile():
     return render_template('html/pages/profile.html')
 
+@app.route('/bd')
+def view_bd():
+    for n in get_users_names():
+        result = n[0]
+        
+
+
 # @app.route('/logo')
 # def logo():
 #     return render_template('html/pages/ranking.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
