@@ -57,7 +57,7 @@ def register():
                 return redirect(url_for('register'))
 
         if password != confirmPassword:
-            flash('Senhas incongruentes. Tente novamente!')
+            flash('Senhas diferentes. Tente novamente!')
             return redirect(url_for('register'))
         
         with get_connection() as conn:
