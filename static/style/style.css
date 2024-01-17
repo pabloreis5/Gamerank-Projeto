@@ -222,15 +222,12 @@ a:hover, button:hover {
   margin-left: 1.5rem;
 }
 
-.navbar {
-  padding: 2rem;
-}
-
 .home header {
   background-color: #121212;
 }
 .home header nav {
   font-family: "Poppins";
+  padding: 1rem;
 }
 .home header nav a {
   color: white;
@@ -437,6 +434,7 @@ a:hover, button:hover {
   height: 180px;
   width: 130px;
   margin-right: 2rem;
+  cursor: pointer;
 }
 .categories .game img {
   height: 180px;
@@ -452,18 +450,71 @@ a:hover, button:hover {
   text-align: center;
   color: white;
   margin-top: 0.5rem;
+}
+
+.modal__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background-color: #121212;
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  color: var(--bs-modal-color);
+  outline: 0;
+  pointer-events: auto;
+}
+.modal__header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding-left: 1rem;
+}
+.modal__body {
+  display: flex;
+  position: relative;
+  flex: 1 1 auto;
+  padding: var(--bs-modal-padding);
+}
+.modal__body .functionality {
+  width: 30%;
+  margin-right: 3rem;
+}
+.modal__body .functionality img {
+  height: 15rem;
+  width: 15rem;
+  margin-bottom: 1rem;
+}
+.modal__body .functionality select {
+  font-family: "Poppins";
+  color: gray;
+  width: 77% !important;
+}
+.modal__body .functionality p {
+  margin-top: 1rem;
+  font-family: "Press Start 2P";
+  color: #2BF6FA;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.modal__body .description {
+  height: auto;
+  width: 70%;
+  border: 1px solid white;
+  padding: 1rem;
+}
+.modal__body .description p {
+  font-family: "Poppins";
+  font-size: 1.2rem;
+  color: white;
+}
+.modal__footer {
+  padding: 1rem;
+}
+.modal__footer .comments {
+  min-height: 15rem;
+  width: 100%;
+  border: 1px solid white;
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */
-
-.main-carousel  {
-  max-width: 1850px;
-  margin: auto;
-} 
-
-.carousel-inner {
-  max-height: 700px;
-}
-
-.carousel-item img {
-  width: 100%; /* Garante que a imagem ocupe toda a largura do contêiner pai */
-  height: auto; /* Permite que a altura seja ajustada proporcionalmente à largura */
-}
