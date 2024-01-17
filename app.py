@@ -28,8 +28,7 @@ def get_users_names():
             names.append(name)
     
         return names
-
-
+    
 
 
 
@@ -53,9 +52,13 @@ def login():
                 return redirect(url_for('login'))
             else:
                 flash('Login bem sucedido!', 'success')
-                return redirect(url_for('home'))
+                if name == 'admin':
+                    return redirect(url_for('adminpage'))  # Redireciona para a página do administrador se o nome do usuário for 'admin'
+                else:
+                    return redirect(url_for('home'))
 
     return render_template('html/register/login.html')
+
 
 
 
@@ -120,15 +123,41 @@ def ranking():
 def profile():
     return render_template('html/pages/profile.html')
 
-@app.route('/bd')
-def view_bd():
-    users = get_users_names()
-    return render_template('html/pages/view_bd.html', users=users)
+@app.route('/adminpage')
+def adminpage():
+    return render_template('html/pages/adminpage.html')
+
+@app.route('/submit_data', methods=['POST'])
+def submit_data():
+    nome = request.form['nome']
+    ano_lancamento = request.form['ano_lancamento']
+    genero = request.form['genero']
+    descricao_curta = request.form['descricao_curta']
+    descricao_completa = request.form['descricao_completa']
+    url_imagem = request.form['url_imagem']
+
+    with get_connection() as conn:
+        try:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO jogos (nome, ano_lancamento, genero, descricao_curta, descricao_completa, url_imagem) VALUES (?, ?, ?, ?, ?, ?)', (nome, ano_lancamento, genero, descricao_curta, descricao_completa, url_imagem))
+            conn.commit()
+            flash('Dados inseridos com sucesso!', 'success')
+        except:
+            flash('Erro ao inserir os dados. Tente novamente!', 'error')
+
+    return redirect(url_for('adminpage'))
 
 
-# @app.route('/logo')
-# def logo():
-#     return render_template('html/pages/ranking.html')
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
