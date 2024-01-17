@@ -24,7 +24,9 @@
     .game {
         height: 180px;
         width: 130px;
+
         margin-right: 2rem;
+        cursor: pointer;
 
         img {
             height: 180px;
@@ -32,7 +34,7 @@
 
             border-radius: 10% 10% 0 0;
         }
-
+        
         &__body {
             width: 100%;
 
@@ -45,6 +47,94 @@
 
                 margin-top: .5rem;
             }
+        }
+    }
+}
+
+.modal {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        position: relative;
+
+        background-color: $bg-gamerank;
+        background-clip: padding-box;
+        border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+        border-radius: var(--bs-modal-border-radius);
+        color: var(--bs-modal-color);
+
+        outline: 0;
+        pointer-events: auto;
+
+    }
+
+    &__header {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        padding-left: 1rem;
+    }
+
+    &__body {
+        display: flex;
+        position: relative;
+        flex: 1 1 auto;
+        padding: var(--bs-modal-padding);
+
+        .functionality {
+            width: 30%;
+            margin-right: 3rem;
+
+            img {
+                height: 15rem;
+                width: 15rem;
+
+                margin-bottom: 1rem;
+            }
+
+            select {
+                font-family: $text-default;
+                color: gray;
+                width: 77% !important;
+            }
+
+
+            p {
+                margin-top: 1rem;
+                font-family: $title-gamerank;
+                color: $cyan-gamerank;
+                font-size: .9rem;
+                cursor: pointer;
+            }
+        }
+
+        .description {
+            height: auto;
+            width: 70%;
+
+            border: 1px solid white;
+            padding: 1rem;
+
+            p {
+                font-family: $text-default;
+                font-size: 1.2rem;
+                color: white;
+            }
+        }
+    }
+
+    &__footer {
+        padding: 1rem;
+
+        .comments {
+            min-height: 15rem;
+            width: 100%;
+
+            border: 1px solid white;
+            padding: 1rem;
         }
     }
 }

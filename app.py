@@ -33,9 +33,31 @@ def get_users_names():
 
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        name = request.form.get('nome')
+        password = request.form.get('senha')
+
+        if not name or not password:
+            flash('Usuário ou senha não fornecidos. Tente novamente!', 'warning')
+            return redirect(url_for('login'))
+
+        with get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM usuario WHERE nome = ? AND senha = ?', (name, password))
+            user = cursor.fetchone()
+
+            if user is None:
+                flash('Usuário não existe ou credenciais incorretas. Tente novamente!')
+                return redirect(url_for('login'))
+            else:
+                flash('Login bem sucedido!', 'success')
+                return redirect(url_for('home'))
+
     return render_template('html/register/login.html')
+
+
 
 @app.context_processor
 def inject_active():
@@ -66,7 +88,7 @@ def register():
 
         #exceção de senhas incompatíveis
         if password != confirmPassword:
-            flash('Senhas incongruentes. Tente novamente!', 'warning') 
+            flash('Senhas diferentes. Tente novamente!')
             return redirect(url_for('register'))
         
         #Inserindo no bd
