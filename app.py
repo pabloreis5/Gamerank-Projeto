@@ -33,7 +33,6 @@ def get_users_names():
 
 
 
-
 @app.route('/')
 def login():
     return render_template('html/register/login.html')
@@ -51,15 +50,26 @@ def register():
         password = request.form['senha']
         confirmPassword = request.form['confirmar_senha']
 
+        #exceção de formulário incompleto
+        if name == "":
+            flash('Preencha o campo Usuário!', 'warning')
+        elif password == "":
+            flash('Preencha o campo Senha!', 'warning')
+        elif confirmPassword == "":
+            flash('Preencha o campo Confirmar Senha!', 'warning')
+
+        #exceção de nome inválido
         for n in get_users_names():
             if name == n:
-                flash('Nome inválido. Tente novamente!')
+                flash('Nome inválido. Tente novamente!', 'warning') 
                 return redirect(url_for('register'))
 
+        #exceção de senhas incompatíveis
         if password != confirmPassword:
-            flash('Senhas incongruentes. Tente novamente!')
+            flash('Senhas incongruentes. Tente novamente!', 'warning') 
             return redirect(url_for('register'))
         
+        #Inserindo no bd
         with get_connection() as conn:
             try:
                 cursor = conn.cursor()  
@@ -67,8 +77,7 @@ def register():
                 conn.commit() 
                 flash('Usuário registrado com sucesso!', 'success')
             except:
-                flash('Erro ao registrar o usuário. Tente novamente!')
-
+                flash('Erro ao registrar o usuário. Tente novamente!', 'error')
 
     return render_template('html/register/register.html')
 
