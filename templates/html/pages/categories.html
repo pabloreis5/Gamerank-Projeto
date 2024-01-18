@@ -4,77 +4,23 @@
 <section class="categories">
     <h1>Categorias:</h1>
 
-    <div class="action">
-        <h4>Ação</h4>
+    {% for category in categories_infos %}
+        <div class="{{ category['slug'] }}">
+            <h4>{{ category['nome'] }}</h4>
         
-        <div class="d-flex justify-content-center flex-wrap">
-    
-            <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="{{ url_for('static', filename='imgs/reddead.png') }}" class="card-img-top">
-                
-                <div class="game__body">
-                  <p>Red Dead  II</p>
-                </div>
+            <div class="d-flex justify-content-center flex-wrap">
+                {% for jogo in category['jogos'] %}
+                    <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal{{ jogo['id'] }}">
+                        <img src="{{ url_for('static', filename=jogo['url_imagem']) }}" class="card-img-top">
+                        
+                        <div class="game__body">
+                            <p>{{ jogo['nome'] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-    
-            <div class="game" >
-                <img src="{{ url_for('static', filename='imgs/callofduty.png') }}" class="card-img-top">
-                
-                <div class="game__body">
-                  <p>Call of Duty</p>
-                </div>
-            </div>
-    
-            <div class="game">
-                <img src="{{ url_for('static', filename='imgs/pokemon.png') }}" class="card-img-top">
-                
-                <div class="game__body">
-                  <p>Pokemon</p>
-                </div>
-            </div>
-
-            <div class="game">
-                <img src="{{ url_for('static', filename='imgs/pubg.png') }}" class="card-img-top">
-                
-                <div class="game__body">
-                  <p>Pubg</p>
-                </div>
-            </div>
-
-            <div class="game">
-              <img src="{{ url_for('static', filename='imgs/pubg.png') }}" class="card-img-top">
-              
-              <div class="game__body">
-                <p>Pubg</p>
-              </div>
-            </div>
-
-            <div class="game">
-              <img src="{{ url_for('static', filename='imgs/pubg.png') }}" class="card-img-top">
-              
-              <div class="game__body">
-                <p>Pubg</p>
-              </div>
-            </div>
-            
-            <div class="game">
-              <img src="{{ url_for('static', filename='imgs/pokemon.png') }}" class="card-img-top">
-              
-              <div class="game__body">
-                <p>Pokemon</p>
-              </div>
-            </div>
-
-            <div class="game">
-              <img src="{{ url_for('static', filename='imgs/pokemon.png') }}" class="card-img-top">
-              
-              <div class="game__body">
-                <p>Pokemon</p>
-              </div>
-            </div>
-
         </div>
-    </div>
+    {% endfor %}
 
     <div class="rpg">
 

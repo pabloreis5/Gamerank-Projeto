@@ -445,7 +445,7 @@ a:hover, button:hover {
 }
 .categories .game img {
   height: 180px;
-  width: 130px;
+  width: 130px; 
   border-radius: 10% 10% 0 0;
 }
 .categories .game__body {
