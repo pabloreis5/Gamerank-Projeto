@@ -100,7 +100,7 @@
 
     </div>
 
-    <!-- Modal -->
+    <!-- modal -->
     <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       
       <div class="modal-dialog">   
@@ -118,10 +118,12 @@
               <img src="{{ url_for('static', filename='imgs/reddead.png') }}">
 
               <select class="form-select" aria-label="Default select example">
-                <option selected>Avalie</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
 
               <p>+ lista de desejo</p>
@@ -141,7 +143,11 @@
 
             </div>
 
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="btns d-flex">
+              <button type="button" class="" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="" data-bs-dismiss="modal">Salvar</button>
+            </div>
+
           </div>
         </div>
       </div>
