@@ -129,11 +129,65 @@
         padding: 1rem;
 
         .comments {
-            min-height: 15rem;
+            height: 17rem;
+            overflow-y: auto;
             width: 100%;
 
             border: 1px solid white;
             padding: 1rem;
+            
+            .review {
+                display: flex;    
+                margin-bottom: 2rem;
+
+                img {
+                    height: 50px;
+                    width: 100px;
+                    margin-bottom: .5rem;
+                }
+
+                select {
+                    height: 33px;
+                }
+
+                textarea {
+                    min-height: 3rem;
+                    width: 100%;
+                    resize: none;
+                    margin-left: .5rem;
+                    font-family: $text-default;
+                    outline: none;
+                    padding-left: .5rem;
+                }
+            }      
+        }
+
+        .comment {
+
+            .review {
+                display: flex;   
+                margin-top: 2rem; 
+
+                img {
+                    height: 50px;
+                    width: 80px;
+                    margin-bottom: .5rem;
+                }
+
+                select {
+                    height: 33px;
+                }
+
+                textarea {
+                    min-height: 3rem;
+                    width: 100%;
+                    resize: none;
+                    margin-left: .5rem;
+                    font-family: $text-default;
+                    outline: none;
+                    padding-left: .5rem;
+                }
+            }  
         }
 
         .btns {
@@ -141,8 +195,8 @@
             button:nth-child(1) {
                 display: block;
                 width: 10%;
-                padding: 0.6rem 0.6rem 0.6rem 0.6rem;
                 margin-right: 1.5rem;
+                padding: .2rem .5rem .2rem .5rem;
                 color: white;
                 background-color: #FF0000;
                 font-family: "Poppins";
@@ -157,7 +211,6 @@
             button:nth-child(2) {
                 display: block;
                 width: 10%;
-                padding: 0.6rem 0.6rem 0.6rem 0.6rem;
                 color: white;
                 background-color: #00FF19;
                 margin-right: 2.5rem;
