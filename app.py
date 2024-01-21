@@ -133,7 +133,7 @@ def home():
 def ranking():
     return render_template('html/pages/ranking.html')
 
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'UPDATE'])
 def profile():
     return render_template('html/pages/profile.html')
 
