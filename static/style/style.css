@@ -424,6 +424,7 @@ a:hover, button:hover {
   margin-top: 2rem;
 }
 .profile__reviews table tbody tr {
+  height: 150px;
   width: 100%;
   background-color: #1E1E1E;
   margin-top: 3rem;
@@ -431,18 +432,18 @@ a:hover, button:hover {
 .profile__reviews table tbody tr td:nth-child(1) {
   width: 10%;
   padding-left: 0.5rem;
-  padding-top: -1.5rem;
 }
 .profile__reviews table tbody tr td:nth-child(1) img {
-  height: 163px;
-  width: auto;
+  height: 56px;
+  width: 56px;
 }
 .profile__reviews table tbody tr td:nth-child(1) select {
+  height: 26px;
+  width: 56px;
   text-align: center;
 }
 .profile__reviews table tbody tr td:nth-child(2) {
   width: 70%;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 .profile__reviews table tbody tr td:nth-child(2) textarea {
   min-height: 3rem;
@@ -456,7 +457,6 @@ a:hover, button:hover {
 }
 .profile__reviews table tbody tr td:nth-child(3) {
   width: 10%;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 .profile__reviews table tbody tr td:nth-child(3) button:nth-child(1) {
   display: block;
@@ -509,22 +509,28 @@ a:hover, button:hover {
   height: 180px;
   width: 130px;
   margin-right: 2rem;
+  margin-top: 4rem;
   cursor: pointer;
 }
 .categories .game img {
-  height: 180px;
+  height: 130px;
   width: 130px;
-  border-radius: 10% 10% 0 0;
 }
 .categories .game__body {
   width: 100%;
 }
 .categories .game__body p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: "Poppins";
   text-align: center;
   color: white;
   margin-top: 0.5rem;
+}
+.categories .game__body button {
+  height: 23px;
+  width: 30px;
+  font-size: 1rem;
+  padding: 0;
 }
 
 .modal__container {

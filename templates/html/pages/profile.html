@@ -2,26 +2,6 @@
 {%block content%}
 <section class="profile">
     <h1 style="color: white;">Olá, {{name}}!</h1>
-    <div class="profile__infos">
-        
-        <form>
-            <img src="{{ url_for('static', filename='imgs/profileblack.png') }}">
-            
-            <fieldset>
-                <label>Nome:</label>
-                <input type="text" class="form-control">
-
-                <label>Senha:</label>
-                <input type="text" class="form-control">
-            </fieldset>
-        </form>
-        
-        <div class="d-flex justify-content-end pb-4">
-            <button>Cancelar</button>
-            <button>Salvar</button>
-        </div>
-        
-    </div>
 
     <div class="profile__wishlist">
 
@@ -46,24 +26,6 @@
                 </tr>
             </tbody>
         </table>
-
-        <nav aria-label="Page navigation example" class="mt-3">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
 
     </div>
 
@@ -94,7 +56,7 @@
                     <td>
                         <div class="btns d-flex">
                             <button>Cancelar</button>
-                            <button>Salvar</button>
+                            <button>Enviar</button>
                         </div>
                     </td>
                 </tr>
@@ -126,24 +88,6 @@
                 </tr> -->
             </tbody>
         </table>
-
-        <nav aria-label="Page navigation example" class="mt-3">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
 
     </div>
 
