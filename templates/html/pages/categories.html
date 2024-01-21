@@ -2,6 +2,7 @@
 {%block content%}
 
 <section class="categories">
+
     <h1>Categorias:</h1>
 
     <div class="action">
@@ -12,15 +13,15 @@
             {% for game in games %}
                 <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="{{ game[7] }}" class="card-img-top">
-            
+
                     <div class="game__body">
                     <p>{{ game[1] }}</p> <!--<br> {{ game[3] }}-->
                     </div>
                 </div>
             {% endfor %}
-           
+
         </div>
-  
+
         <nav aria-label="Page navigation example" class="mt-5">
             <ul class="pagination">
             <li class="page-item">
@@ -43,30 +44,35 @@
 
     <div class="rpg">
 
-    
+
     </div>
 
     <div class="fps">
 
+      <!-- navegação -->
     </div>
 
     <div class="sports">
 
+      <!-- navegação -->
     </div>
 
     <div class="strategy">
 
+      <!-- navegação -->
     </div>
 
     <div class="adventure">
 
+      <!-- navegação -->
     </div>
 
     <div class="race">
 
+      <!-- navegação -->
     </div>
 
-    <!-- Modal -->
+    <!-- modal -->
     <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
       <div class="modal-dialog">   
@@ -84,10 +90,12 @@
               <img src="{{ url_for('static', filename='imgs/reddead.png') }}">
 
               <select class="form-select" aria-label="Default select example">
-                <option selected>Avalie</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
 
               <p>+ lista de desejo</p>
@@ -105,14 +113,48 @@
 
             <div class="comments">
 
+              <div class="review">
+                <div class="d-flex flex-column">
+                  <img src="{{ url_for('static', filename='imgs/profileblack.png') }}">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+
+                <textarea></textarea>
+              </div>
+
             </div>
 
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="comment">
+
+              <div class="review">
+                <div class="d-flex flex-column">
+                  <img src="{{ url_for('static', filename='imgs/profileblack.png') }}">
+                </div>
+
+                <textarea></textarea>
+              </div>
+
+            </div>
+
+            <div class="btns d-flex justify-content-end mt-4 ">
+              <button type="button" class="" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="" data-bs-dismiss="modal">Enviar</button>
+            </div>
+
           </div>
         </div>
       </div>
 
     </div>
+
+
 
     
 </section>
