@@ -28,7 +28,6 @@ def get_users_names():
             names.append(name)
     
         return names
-<<<<<<< HEAD
 
 def get_username_by_id(user_id):
     with get_connection() as conn:
@@ -52,9 +51,6 @@ def get_categories_infos():
             id, nome, genero, ano_lancamento, descricao_curta, descricao_completa, url_imagem = row
             infos.append({'id': id, 'nome': nome, 'genero': genero, 'ano_lancamento': ano_lancamento, 'descricao_curta': descricao_curta, 'descricao_completa': descricao_completa, 'url_imagem': url_imagem})
     return infos
-=======
-    
->>>>>>> 4f4ba9fb7e9c29a927ea6e68705b11926851ac1d
 
 
 
@@ -162,7 +158,8 @@ def profile():
         user_name = get_username_by_id(user_id)
         return render_template('html/pages/profile.html', name=user_name)
     else:
-        abort(403)
+        flash('Você precisa fazer login para acessar esta página.', 'warning')
+        return redirect(url_for('login'))
 
 
 @app.route('/adminpage')
