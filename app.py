@@ -1,5 +1,5 @@
 import secrets
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, session, abort
 import sqlite3
 
 
@@ -28,7 +28,17 @@ def get_users_names():
             names.append(name)
     
         return names
-    
+
+def get_username_by_id(user_id):
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT nome FROM usuario WHERE id = ?', (user_id,))
+        result = cursor.fetchone()
+        if result:
+            return result[0]
+        else:
+            return None 
+
 def get_categories_infos():
     with get_connection() as conn:
         cursor = conn.cursor()
@@ -64,6 +74,8 @@ def login():
                 flash('Usuário não existe ou credenciais incorretas. Tente novamente!')
                 return redirect(url_for('login'))
             else:
+                user_id, user_name, _ = user
+                session['user_id'] = user_id
                 flash('Login bem sucedido!', 'success')
                 if name == 'admin':
                     return redirect(url_for('adminpage'))  # Redireciona para a página do administrador se o nome do usuário for 'admin'
@@ -135,7 +147,13 @@ def ranking():
 
 @app.route('/profile')
 def profile():
-    return render_template('html/pages/profile.html')
+    if 'user_id' in session:
+        user_id = session['user_id']
+        user_name = get_username_by_id(user_id)
+        return render_template('html/pages/profile.html', name=user_name)
+    else:
+        abort(403)
+
 
 @app.route('/adminpage')
 def adminpage():
