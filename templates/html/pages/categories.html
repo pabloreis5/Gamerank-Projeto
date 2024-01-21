@@ -3,6 +3,7 @@
 
 <section class="categories">
     <h1>Categorias:</h1>
+<<<<<<< HEAD
     
     <div class="acao">
       <div class="d-flex justify-content-center flex-wrap">
@@ -19,6 +20,49 @@
 
     <div class="rpg">
 
+=======
+
+    <div class="action">
+        <h4>Ação</h4>
+
+        <div class="d-flex justify-content-around flex-wrap">
+
+            {% for game in games %}
+                <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="{{ game[7] }}" class="card-img-top">
+            
+                    <div class="game__body">
+                    <p>{{ game[1] }}</p> <!--<br> {{ game[3] }}-->
+                    </div>
+                </div>
+            {% endfor %}
+           
+        </div>
+  
+        <nav aria-label="Page navigation example" class="mt-5">
+            <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="rpg">
+
+    
+>>>>>>> 4f4ba9fb7e9c29a927ea6e68705b11926851ac1d
     </div>
 
     <div class="fps">
@@ -43,7 +87,7 @@
 
     <!-- Modal -->
     <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      
+
       <div class="modal-dialog">   
         <div class="modal__container">
           <div class="modal__header">
@@ -54,7 +98,7 @@
           </div>
 
           <div class="modal__body">
-            
+
             <div class="functionality">
               <img src="{{ url_for('static', filename='imgs/reddead.png') }}">
 
@@ -89,6 +133,7 @@
 
     </div>
 
+    
 </section>
 
 {%endblock content%}
