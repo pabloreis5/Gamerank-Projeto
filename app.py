@@ -29,22 +29,9 @@ def get_users_names():
     
         return names
     
-def get_categories_infos():
-    with get_connection() as conn:
-        cursor = conn.cursor()
-        cursor.execute('SELECT id, nome, genero, ano_lancamento, descricao_curta, descricao_completa, url_imagem FROM jogos')
-        result = cursor.fetchall()
-
-        infos = []
-
-        for row in result:
-            id, nome, genero, ano_lancamento, descricao_curta, descricao_completa, url_imagem = row
-            infos.append({'id': id, 'nome': nome, 'genero': genero, 'ano_lancamento': ano_lancamento, 'descricao_curta': descricao_curta, 'descricao_completa': descricao_completa, 'url_imagem': url_imagem})
-    return infos
 
 
 
-#Rotas
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -119,11 +106,18 @@ def register():
 
     return render_template('html/register/register.html')
 
+def get_games():
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM jogos')
+        games = cursor.fetchall()
+        return games
+
 
 @app.route('/categories')
 def categories():
-    categories_infos = get_categories_infos()
-    return render_template('html/pages/categories.html', categories=categories_infos)
+    games = get_games()
+    return render_template('html/pages/categories.html', games=games)
 
 @app.route('/home')
 def home():
@@ -175,4 +169,3 @@ def submit_data():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    app.run(host='0.0.0.0', port=5000)
