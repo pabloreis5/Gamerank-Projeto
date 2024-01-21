@@ -3,24 +3,19 @@
 
 <section class="categories">
     <h1>Categorias:</h1>
-
-    {% for category in categories_infos %}
-        <div class="{{ category['slug'] }}">
-            <h4>{{ category['nome'] }}</h4>
-        
-            <div class="d-flex justify-content-center flex-wrap">
-                {% for jogo in category['jogos'] %}
-                    <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal{{ jogo['id'] }}">
-                        <img src="{{ url_for('static', filename=jogo['url_imagem']) }}" class="card-img-top">
-                        
-                        <div class="game__body">
-                            <p>{{ jogo['nome'] }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+    
+    <div class="acao">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="{{ url_for('static', filename='static/imgs/reddead') }}" class="card-img-top">
+            
+            <div class="game__body">
+                <p>Red Dead II</p>
             </div>
         </div>
-    {% endfor %}
+      </div4er
+    </div>
+
 
     <div class="rpg">
 
