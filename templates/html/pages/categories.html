@@ -2,6 +2,7 @@
 {%block content%}
 
 <section class="categories">
+
     <h1>Categorias:</h1>
 
     <div class="action">
@@ -12,15 +13,15 @@
             {% for game in games %}
                 <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="{{ game[7] }}" class="card-img-top">
-            
+
                     <div class="game__body">
                     <p>{{ game[1] }}</p> <!--<br> {{ game[3] }}-->
                     </div>
                 </div>
             {% endfor %}
-           
+
         </div>
-  
+
         <nav aria-label="Page navigation example" class="mt-5">
             <ul class="pagination">
             <li class="page-item">
@@ -43,27 +44,6 @@
 
     <div class="rpg">
 
-        <div class="d-flex justify-content-around flex-wrap">
-
-        </div>
-
-        <nav aria-label="Page navigation example" class="mt-5">
-            <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-            </ul>
-        </nav>
 
     </div>
 
@@ -173,6 +153,8 @@
       </div>
 
     </div>
+
+
 
     
 </section>
