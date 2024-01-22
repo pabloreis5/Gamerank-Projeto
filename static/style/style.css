@@ -670,3 +670,14 @@ a:hover, button:hover {
   border-radius: 0.3rem;
   outline: none;
 }/*# sourceMappingURL=style.css.map */
+
+.carousel-item img{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.main-carousel {
+  overflow: hidden;
+  margin: 0;
+}
