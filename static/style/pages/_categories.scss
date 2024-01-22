@@ -26,26 +26,32 @@
         width: 130px;
 
         margin-right: 2rem;
+        margin-top: 4rem;
         cursor: pointer;
 
         img {
-            height: 180px;
+            height: 130px;
             width: 130px;
-
-            border-radius: 10% 10% 0 0;
         }
         
         &__body {
             width: 100%;
 
             p {
-                font-size: 1rem;
+                font-size: .8rem;
                 font-family: "Poppins";
                 text-align: center;
 
                 color: white;
 
                 margin-top: .5rem;
+            }
+
+            button {
+                height: 23px;
+                width: 30px;
+                font-size: 1rem;
+                padding: 0;
             }
         }
     }
