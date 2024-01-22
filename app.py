@@ -52,7 +52,44 @@ def get_categories_infos():
             infos.append({'id': id, 'nome': nome, 'genero': genero, 'ano_lancamento': ano_lancamento, 'descricao_curta': descricao_curta, 'descricao_completa': descricao_completa, 'url_imagem': url_imagem})
     return infos
 
+def get_games():
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM jogos')
+        games = cursor.fetchall()
+        return games
+    
+def get_wishlist_by_user_id(user_id):
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT jogos.id, jogos.nome, jogos.genero, jogos.ano_lancamento, jogos.descricao_curta, jogos.descricao_completa, jogos.url_imagem FROM lista_de_desejos JOIN jogos ON lista_de_desejos.id_jogo = jogos.id WHERE lista_de_desejos.id_usuario = ?', (user_id,))
+        result = cursor.fetchall()
 
+        wishlist = []
+
+        for row in result:
+            id, nome, genero, ano_lancamento, descricao_curta, descricao_completa, url_imagem = row
+            wishlist.append({'id': id, 'nome': nome, 'genero': genero, 'ano_lancamento': ano_lancamento, 'descricao_curta': descricao_curta, 'descricao_completa': descricao_completa, 'url_imagem': url_imagem})
+    
+        return wishlist
+
+def get_lista_de_desejos_by_user_id(user_id):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT jogos.*
+        FROM lista_de_desejos
+        JOIN jogos ON lista_de_desejos.id_jogo = jogos.id
+        WHERE lista_de_desejos.id_usuario = ?
+    """, (user_id,))
+    rows = cur.fetchall()
+    columns = [column[0] for column in cur.description]
+    lista_de_desejos = [dict(zip(columns, row)) for row in rows]
+    conn.close()
+    return lista_de_desejos
+
+
+#>>>>>>>>>>ROTAS<<<<<<<<<<<<<
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -82,9 +119,6 @@ def login():
                     return redirect(url_for('home'))
 
     return render_template('html/register/login.html')
-
-
-
 
 @app.context_processor
 def inject_active():
@@ -130,14 +164,6 @@ def register():
 
     return render_template('html/register/register.html')
 
-def get_games():
-    with get_connection() as conn:
-        cursor = conn.cursor()
-        cursor.execute('SELECT * FROM jogos')
-        games = cursor.fetchall()
-        return games
-
-
 @app.route('/categories')
 def categories():
     games = get_games()
@@ -156,11 +182,11 @@ def profile():
     if 'user_id' in session:
         user_id = session['user_id']
         user_name = get_username_by_id(user_id)
-        return render_template('html/pages/profile.html', name=user_name)
+        lista_de_desejos = get_lista_de_desejos_by_user_id(user_id)  # função para buscar a lista de desejos do usuário no BD
+        return render_template('html/pages/profile.html', name=user_name, lista_de_desejos=lista_de_desejos)
     else:
         flash('Você precisa fazer login para acessar esta página.', 'warning')
         return redirect(url_for('login'))
-
 
 @app.route('/adminpage')
 def adminpage():
@@ -186,6 +212,20 @@ def submit_data():
 
     return redirect(url_for('adminpage'))
 
+@app.route('/add_to_wishlist', methods=['POST'])
+def add_to_wishlist():
+    if 'user_id' not in session:
+        abort(403)  # Retorna um erro 403 se o usuário não estiver logado
+
+    game_id = request.form.get('game_id')
+    user_id = session['user_id']
+
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO lista_de_desejos (id_jogo, id_usuario) VALUES (?, ?)', (game_id, user_id))
+        conn.commit()
+
+    return '', 204  # Retorna um status 204 (No Content) para indicar que a operação foi bem-sucedida
 
 
 

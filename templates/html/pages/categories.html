@@ -15,8 +15,7 @@
             <div class="game__body">
               <div class="d-flex justify-content-between align-items-center">
                 <p>{{ game[1] }}</p>
-
-                <button type="button" class="btn btn-success">+</button>
+                <button type="button" class="btn btn-success" data-id="{{ game[0] }}">+</button>
               </div>
             </div>
           </div>
@@ -24,5 +23,6 @@
       {% endfor %}
     </div>
 </section>
+
 
 {%endblock content%}
