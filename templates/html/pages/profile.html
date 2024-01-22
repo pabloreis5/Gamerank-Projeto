@@ -3,11 +3,9 @@
 <section class="profile">
     <h1 style="color: white;">Olá, {{name}}!</h1>
 
-    <div class="profile__wishlist">
-
+    <div class="profile__wishlist" style="height:600px; overflow:auto;">
         <h1>Lista de desejos:</h1>
-        
-        <table>
+        <table style="display:block; height:200px; overflow:auto;">
             <thead>
                 <tr>
                     <td>Tipo</td>
@@ -16,17 +14,17 @@
                     <td>Descrição</td>
                 </tr>
             </thead>
-
             <tbody>
+                {% for jogo in lista_de_desejos %}
                 <tr>
-                    <td>Aventura</td>
-                    <td><img src="{{ url_for('static', filename='imgs/genshin.png') }}"></td>
-                    <td>Genshin Impact</td>
-                    <td>Trata-se de um novo RPG de ação e mundo aberto, no qual a exploração é livre e oferece um mapa enorme e várias missões e desafios ao jogador.</td>
+                    <td>{{jogo.genero}}</td>
+                    <td><img src="{{ jogo.url_imagem }}"></td>
+                    <td>{{jogo.nome}}</td>
+                    <td>{{jogo.descricao_curta}}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
-
     </div>
 
     <div class="profile__reviews">
@@ -60,32 +58,6 @@
                         </div>
                     </td>
                 </tr>
-
-                <!-- <tr>
-                    <td>
-                        <div class="d-flex flex-column">
-                            <img src="{{ url_for('static', filename='imgs/genshin.png') }}">
-
-                            <select class="form-select mt-3" aria-label="Default select example">
-                                <option selected>0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <textarea id="" cols="30" rows="10"></textarea>
-                    </td>
-                    <td>
-                        <div class="btns d-flex">
-                            <button>Cancelar</button>
-                            <button>Salvar</button>
-                        </div>
-                    </td>
-                </tr> -->
             </tbody>
         </table>
 

@@ -31,3 +31,22 @@ const typeWhriter = (title, redirection)=> {
 }
 
 typeWhriter(title, redirection)
+
+
+$(".btn-success").click(function() {
+    var gameId = $(this).data("id");
+
+    $.ajax({
+        url: '/add_to_wishlist',
+        type: 'post',
+        data: {
+            'game_id': gameId
+        },
+        success: function(response) {
+            alert("Jogo adicionado à lista de desejos com sucesso!");
+        },
+        error: function(response) {
+            alert("Houve um erro ao adicionar o jogo à lista de desejos. Por favor, tente novamente.");
+        }
+    });
+});
