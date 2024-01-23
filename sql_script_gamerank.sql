@@ -101,11 +101,6 @@ VALUES('Resident Evil Revelations','Survival horror','Resident Evil Revelations 
 'Resident Evil Revelations é elogiado por seu retorno às raízes da série e por manter uma atmosfera tensa. O jogo apresenta episódios intercalados e mecânicas de exploração marítima.', 
 'https://cdn2.steamgriddb.com/thumb/52ec1c0cc952d63a8bda67ff969b6968.jpg', '2012');
 
-
-
-
-
-
 INSERT INTO jogos(nome, genero, descricao_curta, descricao_completa, url_imagem, ano_lancamento)
 VALUES('Resident Evil Outbreak','Survival horror','Resident Evil Outbreak é um jogo de survival horror lançado pela Capcom em 2003 para o PlayStation 2. É um dos primeiros jogos da série a apresentar o modo multijogador online, permitindo que os jogadores cooperem para sobreviver a eventos apocalípticos em Raccoon City.',
 'O jogo apresenta vários personagens jogáveis, cada um com habilidades únicas, e situações dinâmicas que mudam com base nas decisões dos jogadores. Resident Evil Outbreak foi inovador em seu tempo pela abordagem online em um jogo de terror.', 
