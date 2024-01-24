@@ -75,14 +75,11 @@ O banco de dados inclui tabelas para usuários, jogos, lista de desejos e avalia
    
 # Autores
 
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/134239485?v=4" width=115><br><sub>Allanys Almeida</sub>](https://github.com/allanysoalmeida) 
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/134239485?v=4" width="75">](https://github.com/allanysoalmeida) 
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/130513027?v=4" width="75">](https://github.com/beatriztl)
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/78706060?v=4" width="75">](https://github.com/Th3Creator)
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/90535450?v=4" width="75">](https://github.com/matsa0)
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/77701061?v=4" width="75">](https://github.com/pabloreis5)
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/135669849?v=4" width="75">](https://github.com/RafaelFMLeite)
 
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/130513027?v=4" width=115><br><sub>Beatriz Trindade</sub>](https://github.com/beatriztl)  
 
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/78706060?v=4" width=115><br><sub>Christian Louzada</sub>](https://github.com/Th3Creator) 
- 
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/90535450?v=4" width=115><br><sub>Matheus Azevedo</sub>](https://github.com/matsa0) 
-
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/77701061?v=4" width=115><br><sub>Pablo Batista</sub>](https://github.com/pabloreis5) 
-
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/135669849?v=4" width=115><br><sub>Rafael Figueiredo</sub>](https://github.com/RafaelFMLeite) 
