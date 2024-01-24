@@ -1,24 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
 <section class="profile">
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="alert alert-success" id="flashMessage">
-            {{ messages[0] }}
-        </div>
-        {% endif %}
-    {% endwith %}
-
-    <script>
-        window.onload = function() {
-            setTimeout(function(){
-             var flashMessage = document.getElementById('flashMessage');
-             if (flashMessage) flashMessage.style.display = 'none';
-            },  3000);  
-        };
-    </script>
-    
-    <h1 style="color: white;">Olá, {{name}}!</h1>
+    <h1 class="name-user">Olá, <span>{{name}}!</span></h1>
 
     <div class="profile__wishlist" style="height:300px; overflow:auto;">
         <h1>Lista de desejos:</h1>
