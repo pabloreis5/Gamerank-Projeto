@@ -15,13 +15,14 @@
       </thead>
     
       <tbody>
+        {% for jogo in ranking %}
         <tr>
-          <td>#1</th>
-          <td><img src="{{ url_for('static', filename='imgs/reddead.png') }}"></td>
-          <td>Red Dead Redemption 2</td>
-          <td>O jogo se passa em 1899, no final da era do Velho Oeste, e segue a história do fora-da-lei Arthur Morgan,
-            membro da gangue Van der Linde</td>
+          <td>#{{ loop.index }}</td>
+          <td><img src="{{ jogo.url_imagem }}" alt="{{ jogo.nome }}"></td>
+          <td>{{ jogo.nome }}</td>
+          <td>{{ jogo.descricao_completa }}</td>
         </tr>
+        {% endfor %}
       </tbody>
     </table>
 

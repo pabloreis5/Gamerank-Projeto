@@ -101,6 +101,19 @@ def add_avaliacao(user_id, id_jogo, nota, comentario):
         cursor.execute('INSERT INTO avaliacao (nota, comentario, id_jogo, id_usuario) VALUES (?, ?, ?, ?)', (nota, comentario, id_jogo, user_id))
         conn.commit()
 
+def get_ranking():
+    with get_connection() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT jogos.nome, jogos.url_imagem, jogos.descricao_completa, AVG(avaliacao.nota) as media, COUNT(avaliacao.id_jogo) as contagem
+            FROM jogos
+            JOIN avaliacao ON jogos.id = avaliacao.id_jogo
+            GROUP BY jogos.id
+            ORDER BY media DESC, contagem DESC
+        """)
+        columns = [column[0] for column in cur.description]
+        return [dict(zip(columns, row)) for row in cur.fetchall()]
+
 #>>>>>>>>>>ROTAS<<<<<<<<<<<<<
 
 @app.route('/', methods=['GET', 'POST'])
@@ -187,7 +200,8 @@ def home():
 
 @app.route('/ranking')
 def ranking():
-    return render_template('html/pages/ranking.html')
+    ranking = get_ranking()
+    return render_template('html/pages/ranking.html', ranking=ranking)
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
@@ -204,6 +218,7 @@ def profile():
             comentario = request.form.get('comentario')
             add_avaliacao(user_id, id_jogo, nota, comentario)
             flash('Avaliação enviada com sucesso!', 'success')
+            return redirect(url_for('profile'))  # Redireciona para a mesma página
         return render_template('html/pages/profile.html', name=user_name, lista_de_desejos=lista_de_desejos, jogos=jogos)
     else:
         flash('Você precisa fazer login para acessar esta página.', 'warning')
