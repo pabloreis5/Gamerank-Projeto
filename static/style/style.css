@@ -243,7 +243,7 @@ a:hover, button:hover {
 }
 .home main {
   background-color: #121212;
-  min-height: 94.4vh;
+  min-height: 100vh;
 }
 
 .ranking {
@@ -496,6 +496,18 @@ a:hover, button:hover {
   outline: none;
 }
 
+.profile .name-user {
+  font-family: "Press Start 2P";
+  font-size: 1.5rem;
+  color: white;
+  padding-top: 1rem;
+}
+.profile .name-user span{
+  color: #2BF6FA;
+}
+
+
+
 .categories {
   height: 100%;
   padding: 1rem;
@@ -695,25 +707,49 @@ a:hover, button:hover {
   margin: 15px auto;
 }
 
-/*telas menores que 760px*/
-@media(max-width: 760px) {
+/*Navbar*/
+@media screen and (max-width: 760px) {
   .navbar-nav li{
-    font-size: 30px;
+    font-size: 35px;
     padding-bottom: 10px;
     margin: 0 ;
   }
-
   .navbar-nav li a{
     padding: 0;
     margin: 0;
     margin-left: 0 !important;
   }
-
+  .navbar-nav li a{
+    padding-bottom: 0 !important;
+  }
   .icon-profile {
     margin-left: 0 !important;
   }
 
-  .navbar-toggler .navbar-toggler-icon {
-    color: white;
+  .ranking table tbody tr td:nth-child(1) {
+    width: 8%;
+    padding-left: 1.3rem;
+    padding-top: -1.5rem;
+  }
+  .ranking table tbody tr td:nth-child(2) {
+    width: 10%;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
+  .ranking table tbody tr td:nth-child(2) img {
+    height: 55px;
+  }
+  .ranking table tbody tr td:nth-child(3) {
+    width: 30%;
+    text-align: center;
+  }
+  .ranking table tbody tr td:nth-child(4) {
+    width: 60%;
+    text-align: left;
+
   }
 }
+
+
+
+/*Ranqueamento*/
