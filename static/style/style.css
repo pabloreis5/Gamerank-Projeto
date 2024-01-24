@@ -673,7 +673,8 @@ a:hover, button:hover {
 
 .carousel-item img{
   object-fit: cover;
-  height: 870px;
+  width: 100%;
+  height: 100vh;
 }
 
 .main-carousel {
