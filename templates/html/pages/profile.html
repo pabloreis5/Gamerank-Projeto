@@ -3,7 +3,7 @@
 <section class="profile">
     <h1 style="color: white;">Olá, {{name}}!</h1>
 
-    <div class="profile__wishlist" style="height:600px; overflow:auto;">
+    <div class="profile__wishlist" style="height:300px; overflow:auto;">
         <h1>Lista de desejos:</h1>
         <table style="display:block; height:200px; overflow:auto;">
             <thead>
@@ -28,40 +28,45 @@
     </div>
 
     <div class="profile__reviews">
-
         <h1>Reviews:</h1>
-
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="d-flex flex-column">
-                            <img src="{{ url_for('static', filename='imgs/genshin.png') }}">
-
-                            <select class="form-select mt-3" aria-label="Default select example">
-                                <option selected>0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <textarea id="" cols="30" rows="10"></textarea>
-                    </td>
-                    <td>
-                        <div class="btns d-flex">
-                            <button>Cancelar</button>
-                            <button>Enviar</button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+        <form method="POST" id="reviewForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <p> Jogo: </p>
+                                <select name="jogo" class="form-select mt-3" aria-label="Default select example">
+                                    {% for jogo in jogos %}
+                                        <option value="{{jogo.id}}">{{jogo.nome}}</option>
+                                    {% endfor %}
+                                </select>
+                                <p> NOTA: </p>
+                                <select name="nota" class="form-select mt-3" aria-label="Default select example">
+                                    <option selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <textarea name="comentario" id="" cols="30" rows="10"></textarea>
+                        </td>
+                        <td>
+                            <div class="btns d-flex">
+                                <button type="button" onclick="location.reload();">X</button>
+                                <button type="submit">➜</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
     </div>
+    
 
 </section>
 

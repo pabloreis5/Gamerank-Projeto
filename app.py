@@ -88,6 +88,18 @@ def get_lista_de_desejos_by_user_id(user_id):
     conn.close()
     return lista_de_desejos
 
+def get_games_dict():
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM jogos')
+        games = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]
+        return games
+
+def add_avaliacao(user_id, id_jogo, nota, comentario):
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO avaliacao (nota, comentario, id_jogo, id_usuario) VALUES (?, ?, ?, ?)', (nota, comentario, id_jogo, user_id))
+        conn.commit()
 
 #>>>>>>>>>>ROTAS<<<<<<<<<<<<<
 
@@ -177,13 +189,22 @@ def home():
 def ranking():
     return render_template('html/pages/ranking.html')
 
-@app.route('/profile', methods=['GET', 'UPDATE'])
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
     if 'user_id' in session:
         user_id = session['user_id']
         user_name = get_username_by_id(user_id)
-        lista_de_desejos = get_lista_de_desejos_by_user_id(user_id)  # função para buscar a lista de desejos do usuário no BD
-        return render_template('html/pages/profile.html', name=user_name, lista_de_desejos=lista_de_desejos)
+        lista_de_desejos = get_lista_de_desejos_by_user_id(user_id)
+        jogos = get_games_dict()  # Buscar todos os jogos
+        if jogos is None:
+            jogos = []
+        if request.method == 'POST':
+            id_jogo = request.form.get('jogo')
+            nota = request.form.get('nota')
+            comentario = request.form.get('comentario')
+            add_avaliacao(user_id, id_jogo, nota, comentario)
+            flash('Avaliação enviada com sucesso!', 'success')
+        return render_template('html/pages/profile.html', name=user_name, lista_de_desejos=lista_de_desejos, jogos=jogos)
     else:
         flash('Você precisa fazer login para acessar esta página.', 'warning')
         return redirect(url_for('login'))
@@ -226,7 +247,6 @@ def add_to_wishlist():
         conn.commit()
 
     return '', 204  # Retorna um status 204 (No Content) para indicar que a operação foi bem-sucedida
-
 
 
 

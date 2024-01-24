@@ -415,6 +415,12 @@ a:hover, button:hover {
 .profile__reviews {
   margin-top: 2.3rem;
 }
+.profile__reviews p{
+  font-family: "Poppins";
+  font-size: 1.0rem;
+  color: white;
+  margin-top: 1rem;
+}
 .profile__reviews h1 {
   font-family: "Poppins";
   font-size: 1.5rem;
@@ -434,12 +440,12 @@ a:hover, button:hover {
   padding-left: 0.5rem;
 }
 .profile__reviews table tbody tr td:nth-child(1) img {
-  height: 56px;
-  width: 56px;
+  height: 150px;
+  width: 150px;
 }
 .profile__reviews table tbody tr td:nth-child(1) select {
-  height: 26px;
-  width: 56px;
+  height: 36px;
+  width: 66px;
   text-align: center;
 }
 .profile__reviews table tbody tr td:nth-child(2) {
@@ -460,11 +466,12 @@ a:hover, button:hover {
 }
 .profile__reviews table tbody tr td:nth-child(3) button:nth-child(1) {
   display: block;
-  width: 38%;
+  width: 28%;
   padding: 0.6rem 0.6rem 0.6rem 0.6rem;
   margin-right: 1.5rem;
+  margin-left: 1.5rem;
   color: white;
-  background-color: #FF0000;
+  background-color: #ff2828;
   font-family: "Poppins";
   font-weight: bold;
   text-align: center;
