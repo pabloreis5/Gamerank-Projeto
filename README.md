@@ -3,13 +3,15 @@
 
  Bem-vindo à GameRank, uma plataforma interativa que oferece aos entusiastas de jogos a oportunidade de explorar, avaliar e ranquear uma variedade de jogos. Nosso projeto visa criar uma experiência envolvente para os usuários, permitindo-lhes descobrir novos jogos e construir uma lista personalizada de favoritos.
 
-## Índice
- - <a href= "#Funcionalidades">Funcionalidades</a>
- - <a href= "#layout">Layout</a>
- - <a href= "#rodar">Como rodar esse projeto?</a>
- - <a href= "#bd">Banco de Dados</a>
- - <a href= "#tecnologias?">Tecnologias Utilizadas?</a>
- - <a href= "#autores">Autores</a>
+ ## Índice
+ - <a href="#funcionalidades">Funcionalidades</a>
+ - <a href="#layout">Layout</a>
+ - <a href="#como-rodar-esse-projeto">Como rodar esse projeto?</a>
+ - <a href="#bd">Banco de Dados</a>
+ - <a href="#fonte-das-imagens">Fonte das Imagens</a>
+ - <a href="#tecnologias-utilizadas">Tecnologias Utilizadas?</a>
+ - <a href="#autores">Autores</a>
+
 
 
 ## Funcionalidades
@@ -33,6 +35,7 @@
 
  ![telarank](./static/imgs/tela_ranqueamento.png) ![telaperfil](./static/imgs/tela_perfil.png)
 
+ ![telaadmin](./static/imgs/tela_admin.png)
 
 ## Como rodar esse projeto?
 
@@ -57,8 +60,12 @@
     
 4. Abra o navegador e acesse [http://localhost:5000](http://localhost:5000).  
 
-## Estrutura do Banco de Dados
+## Banco de Dados
 O banco de dados inclui tabelas para usuários, jogos, lista de desejos e avaliações.
+
+## Fonte das Imagens
+
+As imagens dos jogos utilizadas neste projeto foram obtidas do [SteamGridDB](https://www.steamgriddb.com/).
 
 ## Tecnologias Utilizadas
 1. [SCSS](https://sass-lang.com/)
@@ -72,7 +79,6 @@ O banco de dados inclui tabelas para usuários, jogos, lista de desejos e avalia
 5. [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
 
-   
 # Autores
 
 [<img loading="lazy" src="https://avatars.githubusercontent.com/u/134239485?v=4" width="75">](https://github.com/allanysoalmeida) 
