@@ -689,3 +689,22 @@ a:hover, button:hover {
   border-radius: 0.3rem;
   outline: none;
 }/*# sourceMappingURL=style.css.map */
+
+
+
+.administrators {
+  background-color: #121212;
+}
+
+.administrators form:nth-child(1) {
+  h1 {
+    font-family: "Press Start 2P";
+    font-size: 2.8rem;
+    color: #2BF6FA;
+    margin-bottom: 0.7rem;
+}
+}
+
+.insert__form {
+
+}
