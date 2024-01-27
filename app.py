@@ -117,9 +117,10 @@ def get_ranking():
 
  
 def create_game(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem):
-    with get_connection as conn:
+    with get_connection() as conn:
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO jogos (nome, ano_lancamento, genero, descricao_curta, descricao_completa, url_imagem) VALUES (?, ?, ?, ?, ?, ?)'),(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem)
+        cursor.execute('INSERT INTO jogos (nome, ano_lancamento, genero, descricao_curta, descricao_completa, url_imagem) VALUES (?, ?, ?, ?, ?, ?)',
+                       (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem))
         conn.commit()
 
 def delete_game(id_jogo):
