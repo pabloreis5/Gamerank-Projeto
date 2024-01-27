@@ -261,7 +261,6 @@ def profile():
 
 @app.route('/adminpage', methods=['GET', 'POST', 'UPDATE', 'DELETE'])
 def adminpage():
-
     if request.method == 'POST':
         nome = request.form['nome']
         lancamento = request.form['lancamento']
