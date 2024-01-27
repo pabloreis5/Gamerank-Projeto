@@ -114,6 +114,40 @@ def get_ranking():
         columns = [column[0] for column in cur.description]
         return [dict(zip(columns, row)) for row in cur.fetchall()]
 
+
+
+def create_game(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem):
+    with get_connection as conn:
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO jogos (nome, ano_lancamento, genero, descricao_curta, descricao_completa, url_imagem) VALUES (?, ?, ?, ?, ?, ?)'),(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem)
+        conn.commit()
+
+def delete_game(id_jogo):
+    with get_connection() as conn:   
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM jogos WHERE id = ?', (id_jogo)) # definir para apagar com as dependências das foreinkeys que existe
+        conn.commit()
+
+def update_game(id_jogo, nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem):  
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+        UPDATE jogos
+        SET nome = ?,
+        ano_lancamento = ?,
+        genero = ?,
+        descricao_curta = ?,
+        descricao_completa = ?,
+        nota_media = ?,
+        url_imagem = ?
+        WHERE id = ?')
+        """), (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem, id_jogo)
+        cursor.commit()
+
+
+
+
+
 #>>>>>>>>>>ROTAS<<<<<<<<<<<<<
 
 @app.route('/', methods=['GET', 'POST'])
@@ -224,9 +258,35 @@ def profile():
         flash('Você precisa fazer login para acessar esta página.', 'warning')
         return redirect(url_for('login'))
 
-@app.route('/adminpage')
+@app.route('/adminpage', methods=['GET', 'POST', 'UPDATE', 'DELETE'])
 def adminpage():
-    return render_template('html/pages/adminpage.html')
+
+    if request.method == 'POST':
+        nome = request.form['nome']
+        lancamento = request.form['lancamento']
+        genero = request.form['genero']
+        descricao_curta = request.form['descricao_curta']
+        descricao_completa = request.form['descricao_completa']
+        url_imagem = request.form['url_imagem']
+        # fazer validação dos campos
+            
+    if request.method == 'UPDATE':
+        id = request.form['id']
+        nome = request.form['nome']
+        lancamento = request.form['lancamento']
+        genero = request.form['genero']
+        descricao_curta = request.form['descricao_curta']
+        descricao_completa = request.form['descricao_completa']
+        url_imagem = request.form['url_imagem']
+        
+        # fazer validação dos campos
+        
+        update_game(id, nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
+        
+        return 0
+
+    games = get_games()
+    return render_template('html/pages/adminpage.html', games=games)
 
 @app.route('/submit_data', methods=['POST'])
 def submit_data():
@@ -247,6 +307,7 @@ def submit_data():
             flash('Erro ao inserir os dados. Tente novamente!', 'error')
 
     return redirect(url_for('adminpage'))
+# inserção dos jogos está aqui
 
 @app.route('/add_to_wishlist', methods=['POST'])
 def add_to_wishlist():
