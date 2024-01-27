@@ -268,7 +268,24 @@ def adminpage():
         descricao_curta = request.form['descricao_curta']
         descricao_completa = request.form['descricao_completa']
         url_imagem = request.form['url_imagem']
+
         # fazer validação dos campos
+        if nome == "":
+            flash('Preencha o campo Nome!', 'warning')
+        elif lancamento == "":
+            flash('Preencha o campo Ano de lançamento!', 'warning')
+        elif genero == "":
+            flash('Preencha o campo Gênero!', 'warning')
+        elif descricao_curta == "":
+            flash('Preencha o campo Descrição curta!', 'warning')
+        elif descricao_completa == "":
+            flash('Preencha o campo de Descrição completa!', 'warning')
+        elif url_imagem == "":
+            flash('Preencha o campo de URL da imagem!', 'warning')
+
+        #inserção
+        create_game(nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
+        flash(f'Jogo "{nome}" adicionado com sucesso!', 'success')
             
     if request.method == 'UPDATE':
         id = request.form['id']
@@ -280,15 +297,31 @@ def adminpage():
         url_imagem = request.form['url_imagem']
         
         # fazer validação dos campos
-        
+        if id == "":
+            flash('Preencha o campo ID!', 'warning')
+        elif nome == "":
+            flash('Preencha o campo Nome!', 'warning')
+        elif lancamento == "":
+            flash('Preencha o campo Ano de lançamento!', 'warning')
+        elif genero == "":
+            flash('Preencha o campo Gênero!', 'warning')
+        elif descricao_curta == "":
+            flash('Preencha o campo Descrição curta!', 'warning')
+        elif descricao_completa == "":
+            flash('Preencha o campo de Descrição completa!', 'warning')
+        elif url_imagem == "":
+            flash('Preencha o campo de URL da imagem!', 'warning')
+
+        # update 
         update_game(id, nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
+        flash(f'Jogo "{nome}" atualizado com sucesso! (ID: {id})', 'success')
         
         return 0
 
     games = get_games()
     return render_template('html/pages/adminpage.html', games=games)
 
-@app.route('/submit_data', methods=['POST'])
+""" @app.route('/submit_data', methods=['POST'])
 def submit_data():
     nome = request.form['nome']
     ano_lancamento = request.form['ano_lancamento']
@@ -307,7 +340,7 @@ def submit_data():
             flash('Erro ao inserir os dados. Tente novamente!', 'error')
 
     return redirect(url_for('adminpage'))
-# inserção dos jogos está aqui
+# inserção dos jogos está aqui """
 
 @app.route('/add_to_wishlist', methods=['POST'])
 def add_to_wishlist():
