@@ -19,5 +19,27 @@
 
     .deletion {
         
+        h1 {
+            font-family: $text-default;
+            font-size: 1.5rem;
+            
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 3rem;
+
+            font-family: $text-default;
+            color: white;
+
+            thead {
+
+                th {
+                    padding-left: 1rem;
+                    padding-bottom: 1.4rem;
+                }
+            }
+        }
     }
 }
