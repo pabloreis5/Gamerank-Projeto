@@ -112,10 +112,10 @@ def get_ranking():
             ORDER BY media DESC, contagem DESC
         """)
         columns = [column[0] for column in cur.description]
-        return [dict(zip(columns, row)) for row in cur.fetchall()]
+        return [dict(zip(columns, row)) for row in cur.fetchall()] 
 
 
-
+ 
 def create_game(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem):
     with get_connection as conn:
         cursor = conn.cursor()
