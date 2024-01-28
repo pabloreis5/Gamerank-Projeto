@@ -11,6 +11,7 @@
           <th>Jogo</th>
           <th>Nome</th>
           <th>Descrição</th>
+          <th>Nota</th>
         </tr>
       </thead>
     
@@ -21,6 +22,7 @@
           <td><img src="{{ jogo.url_imagem }}" alt="{{ jogo.nome }}"></td>
           <td>{{ jogo.nome }}</td>
           <td>{{ jogo.descricao_completa }}</td>
+          <td>{{ jogo.nota_media }}</td>
         </tr>
         {% endfor %}
       </tbody>

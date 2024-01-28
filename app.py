@@ -101,11 +101,52 @@ def add_avaliacao(user_id, id_jogo, nota, comentario):
         cursor.execute('INSERT INTO avaliacao (nota, comentario, id_jogo, id_usuario) VALUES (?, ?, ?, ?)', (nota, comentario, id_jogo, user_id))
         conn.commit()
 
+        recalcula_media_de_notas(id_jogo)
+
+def get_media_de_notas():
+    with get_connection() as conn:
+        cur = conn.cursor()
+        #caso o valor for NULL, substitui por 0
+        cur.execute("""
+            SELECT id_jogo, COALESCE(AVG(nota), 0.0) as media 
+            FROM avaliacao
+            GROUP BY id_jogo
+        """)
+        result = cur.fetchall()
+
+        media_por_jogo = {}
+
+        for row in result:
+            id_jogo = row[0]
+            media = row[1]
+
+            media_por_jogo[id_jogo] = media
+    return media_por_jogo
+
+def recalcula_media_de_notas(id_jogo):
+    with get_connection() as conn:
+        cur = conn.cursor()
+        #caso o valor for NULL, substitui por 0
+        cur.execute("""
+            SELECT COALESCE(AVG(nota), 0.0) as media 
+            FROM avaliacao
+            WHERE id_jogo = ?
+        """, (id_jogo,))
+        
+        nova_media = cur.fetchone()[0]
+
+        cur.execute("""
+            UPDATE jogos
+            SET nota_media = ?
+            WHERE id = ?        
+        """, (nova_media), (id_jogo))
+        conn.commit()
+
 def get_ranking():
     with get_connection() as conn:
         cur = conn.cursor()
         cur.execute("""
-            SELECT jogos.nome, jogos.url_imagem, jogos.descricao_completa, AVG(avaliacao.nota) as media, COUNT(avaliacao.id_jogo) as contagem
+            SELECT jogos.nome, jogos.url_imagem, jogos.descricao_completa, jogos.nota_media, COUNT(avaliacao.id_jogo) as contagem
             FROM jogos
             JOIN avaliacao ON jogos.id = avaliacao.id_jogo
             GROUP BY jogos.id
