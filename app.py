@@ -57,6 +57,8 @@ def get_games():
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM jogos')
         games = cursor.fetchall()
+
+
         return games
     
 def get_wishlist_by_user_id(user_id):
@@ -373,7 +375,8 @@ def adminpage():
         
         return 0
 
-    games = get_games()
+    games = get_games_dict()
+    print("Games from get_games():", games)
     return render_template('html/pages/adminpage.html', games=games)
 
 """ @app.route('/submit_data', methods=['POST'])

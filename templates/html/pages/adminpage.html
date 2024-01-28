@@ -31,112 +31,114 @@
         <input type="text" id="url_imagem" name="url_imagem"><br>
         <input type="submit" value="Enviar">
     </form> -->
+    <div class="container">
+        <section class="forms d-flex justify-content-between">
 
-    <section class="forms d-flex justify-content-between">
+            <form class="insert__form" action="" method="POST">
+                <fieldset>
 
-        <form class="insert__form" action="" method="POST">
-            <fieldset>
-
-                <h1 g-id="title">Adicionar Jogo</h1>
-    
-                <div class="mb-3 row">
-                    <label class="col-sm-2">Nome:</label>
-                    <input type="text" class="form-control" placeholder="Nome" name="nome">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Ano de lançamento:</label>
-                    <input type="number" class="form-control" placeholder="Ano de lançamento" name="ano_de_lancamento">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Gênero:</label>
-                    <input type="text" class="form-control" placeholder="Gênero" name="genero">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição curta:</label>
-                    <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição completa:</label>
-                    <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">URL da imagem:</label>
-                    <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem">
-                </div>
-    
-                <div class="d-flex align-items-end">
-                    <button type="submit">Adicionar</button>
-                </div>
-    
-            </fieldset>
-        </form>
-
+                    <h1 g-id="title">Adicionar Jogo</h1>
         
-        <form action="" method="POST">
-            <fieldset>
-
-                <h1 g-id="title">Atualizar Jogo</h1>
-                <div class="mb-3 row">
-                    <label class="col-sm-2">ID:</label>
-                    <input type="text" class="form-control" placeholder="ID" name="id">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2">Nome:</label>
-                    <input type="text" class="form-control" placeholder="Nome" name="nome">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Ano de lançamento:</label>
-                    <input type="number" class="form-control" placeholder="Ano de lançamento" name="ano_de_lancamento">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Gênero:</label>
-                    <input type="text" class="form-control" placeholder="Gênero" name="genero">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição curta:</label>
-                    <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição completa:</label>
-                    <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">URL da imagem:</label>
-                    <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem">
-                </div>
-    
-                <div class="d-flex align-items-end">
-                    <button type="submit">Atualizar</button>
-                </div>
-    
-            </fieldset>
-        </form>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2">Nome:</label>
+                        <input type="text" class="form-control" placeholder="Nome" name="nome">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Ano de lançamento:</label>
+                        <input type="number" class="form-control" placeholder="Ano de lançamento" name="ano_de_lancamento">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Gênero:</label>
+                        <input type="text" class="form-control" placeholder="Gênero" name="genero">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Descrição curta:</label>
+                        <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Descrição completa:</label>
+                        <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">URL da imagem:</label>
+                        <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem">
+                    </div>
         
-    </section>
+                    <div class="d-flex align-items-end">
+                        <button type="submit">Adicionar</button>
+                    </div>
+        
+                </fieldset>
+            </form>
 
-    <section class="deletion">
-        <table>
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>URL</td>
-                    <td>Descrição</td>
-                    <td></td>
-                </tr>
-            </thead>
+            
+            <form action="" method="POST">
+                <fieldset>
 
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+                    <h1 g-id="title">Atualizar Jogo</h1>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2">ID:</label>
+                        <input type="text" class="form-control" placeholder="ID" name="id">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2">Nome:</label>
+                        <input type="text" class="form-control" placeholder="Nome" name="nome">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Ano de lançamento:</label>
+                        <input type="number" class="form-control" placeholder="Ano de lançamento" name="ano_de_lancamento">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Gênero:</label>
+                        <input type="text" class="form-control" placeholder="Gênero" name="genero">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Descrição curta:</label>
+                        <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">Descrição completa:</label>
+                        <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 ">URL da imagem:</label>
+                        <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem">
+                    </div>
+        
+                    <div class="d-flex align-items-end">
+                        <button type="submit">Atualizar</button>
+                    </div>
+        
+                </fieldset>
+            </form>
+            
+        </section>
 
+        <section class="deletion d-flex justify-content-end">
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Nome</td>
+                        <td>URL</td>
+                        <td>Descrição</td>
+                        <td></td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for jogo in games %}
+                    <tr>
+                        <td>{{ jogo.id }}</td>
+                        <td>{{ jogo.nome }}</td>
+                        <td>{{ jogo.url_imagem }}</td>
+                        <td>{{ jogo.descricao_curta }}</td>
+                        <td><button>-</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
 </body>
 </html>
