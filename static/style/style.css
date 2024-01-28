@@ -688,95 +688,92 @@ a:hover, button:hover {
   border: none;
   border-radius: 0.3rem;
   outline: none;
-}/*# sourceMappingURL=style.css.map */
-
-
+}
 
 .administrators {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
   background-color: #121212;
-  padding: 50px 96px 50px 96px;
-
 }
-
-.administrators form:nth-child(1) {
-  h1 {
-    font-family: "Press Start 2P";
-    font-size: 2.8rem;
-    color: #2BF6FA;
-    margin-bottom: 0.7rem;
-  }
-
-  label {
-    width: 100%;
-    font-family: "Poppins";
-    font-size: 1.3rem;
-    color: white;
-    margin-bottom: 1.4rem;
-    margin-top: 1.5rem;
-  }
-  
-  input {
-    width: 75%;
-    font-family: "Poppins";
-    padding: 0.4rem 0.4rem 0.4rem 1.4rem;
-    margin-left: 0.6rem;
-  }
-
-  button {
-    margin-top: 4rem;
-    display: block;
-    width: 35%;
-    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
-    font-family: "Poppins";
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
-    border: none;
-    border-radius: 3%;
-    transition: 0.5s;
-  }
-
+.administrators .forms {
+  width: 100%;
 }
-
-.administrators form:nth-child(2) {
-  h1 {
-    font-family: "Press Start 2P";
-    font-size: 2.8rem;
-    color: #2BF6FA;
-    margin-bottom: 0.7rem;
-  }
-
-  label {
-    width: 100%;
-    font-family: "Poppins";
-    font-size: 1.3rem;
-    color: white;
-    margin-bottom: 1.4rem;
-    margin-top: 1.5rem;
-  }
-  
-  input {
-    width: 75%;
-    font-family: "Poppins";
-    padding: 0.4rem 0.4rem 0.4rem 1.4rem;
-    margin-left: 0.6rem;
-  }
-
-  button {
-    margin-top: 4rem;
-    display: block;
-    width: 35%;
-    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
-    font-family: "Poppins";
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
-    border: none;
-    border-radius: 3%;
-    transition: 0.5s;
-  }
-
+.administrators .forms label {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 1.4rem;
+  margin-top: 1.5rem;
 }
-
+.administrators .forms input {
+  width: 75%;
+  font-family: "Poppins";
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+  margin-left: 0.6rem;
+}
+.administrators .forms button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
+}
+.administrators .forms h1 {
+  font-family: "Press Start 2P";
+  font-size: 2.8rem;
+  color: #2BF6FA;
+  margin-bottom: 0.7rem;
+}
+.administrators .forms label {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 1.4rem;
+  margin-top: 1.5rem;
+}
+.administrators .forms input {
+  width: 75%;
+  font-family: "Poppins";
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+  margin-left: 0.6rem;
+}
+.administrators .forms button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
+}
+.administrators .deletion h1 {
+  font-family: "Poppins";
+  font-size: 1.5rem;
+  color: white;
+}
+.administrators .deletion table {
+  width: 100%;
+  margin-top: 3rem;
+  font-family: "Poppins";
+  color: white;
+}
+.administrators .deletion table thead th {
+  padding-left: 1rem;
+  padding-bottom: 1.4rem;
+}/*# sourceMappingURL=style.css.map */
