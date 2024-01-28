@@ -2,11 +2,9 @@
 {%block content%}
 
 <section class="categories">
-
     <h1>Todos os jogos:</h1>
 
-
-      <div class="d-flex justify-content-around flex-wrap">
+    <div class="d-flex justify-content-around flex-wrap">
       {% for game in games %}
         
           <div class="game" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -23,6 +21,5 @@
       {% endfor %}
     </div>
 </section>
-
 
 {%endblock content%}

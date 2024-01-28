@@ -15,112 +15,6 @@
     <title>Gamerank</title>
 </head>
 <body class="administrators">
-<<<<<<< HEAD
-
-        {%for message in get_flashed_messages()%}
-            <div class="alert alert-warning" role="alert">
-                {{ message }}
-            </div>
-<!--         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    {% if 'warning' in message %}
-                        <div class="alert alert-warning" role="alert">
-                            {{ message }}
-                        </div>
-                    {% elif 'error' in message %}
-                        <div class="alert alert-danger" role="alert">
-                            {{ message }}
-                        </div>
-                    {% elif 'success' in message %}
-                        <div class="alert alert-success" role="alert">
-                            {{ message }}
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            {%endif%}
-        {%endwith%} -->
-        {%endfor%}
-
-    <section class="forms">
-
-        <form  action="" method="POST">
-            <fieldset>
-
-                <h1>Adicionar Jogo</h1>
-    
-                <div class="mb-3 row">
-                    <label class="col-sm-2">Nome:</label>
-                    <input type="text" class="form-control" placeholder="Nome" name="nome">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Ano de lançamento:</label>
-                    <input type="number" class="form-control" placeholder="Ano de lançamento" name="lancamento">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Gênero:</label>
-                    <input type="text" class="form-control" placeholder="Gênero" name="genero">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição curta:</label>
-                    <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição completa:</label>
-                    <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">URL da imagem:</label>
-                    <input type="text" class="form-control" placeholder="URL da imagem" name="url_imagem">
-                </div>
-    
-                <div class="d-flex align-items-end">
-                    <button type="submit">Adicionar</button>
-                </div>
-    
-            </fieldset>
-        </form>
-    
-        <form action="" method="PUT">
-            <fieldset>
-
-                <h1>Atualizar Jogo</h1>
-                <div class="mb-3 row">
-                    <label class="col-sm-2">ID:</label>
-                    <input type="text" class="form-control" placeholder="ID" name="id">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2">Nome:</label>
-                    <input type="text" class="form-control" placeholder="Nome" name="nome">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Ano de lançamento:</label>
-                    <input type="number" class="form-control" placeholder="Ano de lançamento" name="lancamento">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Gênero:</label>
-                    <input type="text" class="form-control" placeholder="Gênero" name="genero">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição curta:</label>
-                    <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">Descrição completa:</label>
-                    <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-2 ">URL da imagem:</label>
-                    <input type="text" class="form-control" placeholder="URL da imagem" name="url_imagem">
-                </div>
-    
-                <div class="d-flex align-items-end">
-                    <button type="submit">Atualizar</button>
-                </div>
-    
-            </fieldset>
-        </form>
-=======
     <!-- <h2>Formulário de Inserção de Dados - JOGOS</h2>
     <form action="/submit_data" method="post">
         <label for="nome">Nome:</label><br>
@@ -137,10 +31,10 @@
         <input type="text" id="url_imagem" name="url_imagem"><br>
         <input type="submit" value="Enviar">
     </form> -->
-    <div class="container">
-        <section class="forms d-flex justify-content-between">
 
-            <form class="insert__form" action="" method="POST">
+        <section class="forms">
+
+            <form method="POST">
                 <fieldset>
 
                     <h1 g-id="title">Adicionar Jogo</h1>
@@ -169,7 +63,6 @@
                         <label class="col-sm-2 ">URL da imagem:</label>
                         <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem">
                     </div>
->>>>>>> dc87a028acbf332d9b45ee044b2258e772bcbb27
         
                     <div class="d-flex align-items-end">
                         <button type="submit">Adicionar</button>
@@ -177,79 +70,48 @@
         
                 </fieldset>
             </form>
-
-<<<<<<< HEAD
-    <section class="deletion">
-        <h1>Deletar jogos:</h1>
-        
-        <table>
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>URL</td>
-                    <td>Descrição</td>
-                    <td></td>
-                </tr>
-            </thead>
        
-            <tbody>
-                {% for jogo in games %}
-                    <tr>
-                        <td>{{ jogo[0] }}</td>
-                        <td>{{ jogo[1] }}</td>
-                        <td>{{ jogo[7] }}</td>
-                        <td>{{ jogo[4] }}</td>
-                        <td><button type="button" class="btn btn-danger" data-id="{{ jogo[0] }}">-</button></td>
-                    </tr>
-                {% endfor %} 
-            </tbody>
-        </table>
-    </section>
-=======
-            
-            <form action="" method="POST">
+            <form>
                 <fieldset>
 
-                    <h1 g-id="title">Atualizar Jogo</h1>
+                    <h1 g-id="redirection">Atualizar Jogo</h1>
                     <div class="mb-3 row">
                         <label class="col-sm-2">ID:</label>
-                        <input type="text" class="form-control" placeholder="ID" name="id">
+                        <input type="text" class="form-control" placeholder="ID" name="id"  g-id="id">
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2">Nome:</label>
-                        <input type="text" class="form-control" placeholder="Nome" name="nome">
+                        <label class="col-sm-2" >Nome:</label>
+                        <input type="text" class="form-control" placeholder="Nome" name="nome" g-id="nome">
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 ">Ano de lançamento:</label>
-                        <input type="number" class="form-control" placeholder="Ano de lançamento" name="ano_de_lancamento">
+                        <label class="col-sm-2">Ano de lançamento:</label>
+                        <input type="number" class="form-control" placeholder="Ano de lançamento" name="ano_de_lancamento"  g-id="lancamento"> 
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 ">Gênero:</label>
-                        <input type="text" class="form-control" placeholder="Gênero" name="genero">
+                        <label class="col-sm-2" >Gênero:</label>
+                        <input type="text" class="form-control" placeholder="Gênero" name="genero" g-id="genero">
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 ">Descrição curta:</label>
-                        <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta">
+                        <label class="col-sm-2">Descrição curta:</label>
+                        <input type="text" class="form-control" placeholder="Descrição curta" name="descricao_curta" g-id="descricao-curta">
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 ">Descrição completa:</label>
-                        <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa">
+                        <label class="col-sm-2">Descrição completa:</label>
+                        <input type="text" class="form-control" placeholder="Descrição completa" name="descricao_completa" g-id="descricao-completa">
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 ">URL da imagem:</label>
-                        <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem">
+                        <label class="col-sm-2">URL da imagem:</label>
+                        <input type="text" class="form-control" placeholder="URL da imagem" name="url_da_imagem" g-id="url">
                     </div>
         
                     <div class="d-flex align-items-end">
-                        <button type="submit">Atualizar</button>
+                        <button type="submit" class="btn-update">Atualizar</button>
                     </div>
         
                 </fieldset>
             </form>
             
         </section>
->>>>>>> dc87a028acbf332d9b45ee044b2258e772bcbb27
 
         <section class="deletion d-flex justify-content-end">
             <table>
@@ -270,14 +132,19 @@
                         <td>{{ jogo.nome }}</td>
                         <td>{{ jogo.url_imagem }}</td>
                         <td>{{ jogo.descricao_curta }}</td>
-                        <td><button>-</button></td>
+                        <td><button class="btn btn-danger"  data-id="{{ jogo.id }}">-</button></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </section>
 
-
-    </div>
+        <footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-iOaCbLjFv7LvpcO6R7Y5WIvZqfSNrOSNc0q9ZoT5Ff3iXw5oLsqYwOp8JODKSoaB" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+            <script src="/static/js/index.js"></script>  
+        </footer>
 </body>
 </html>
