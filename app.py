@@ -1,13 +1,12 @@
 import secrets
 from flask import Flask, render_template, request, flash, redirect, url_for, session, abort
+from flask_paginate import Pagination, get_page_args
 import sqlite3
 
 
 app = Flask(__name__, static_url_path='/static')
 # Gera uma chave secreta hexadecimal de 16 bytes (32 caracteres)
 app.secret_key = secrets.token_hex(16)  
-
-
 
 
 # Cria um cursor
@@ -376,7 +375,6 @@ def adminpage():
         return 0
 
     games = get_games_dict()
-    print("Games from get_games():", games)
     return render_template('html/pages/adminpage.html', games=games)
 
 """ @app.route('/submit_data', methods=['POST'])
