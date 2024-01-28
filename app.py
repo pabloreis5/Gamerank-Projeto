@@ -132,18 +132,9 @@ def delete_game(id_jogo):
 def update_game(id_jogo, nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem):  
     with get_connection() as conn:
         cursor = conn.cursor()
-        cursor.execute("""
-        UPDATE jogos
-        SET nome = ?,
-        ano_lancamento = ?,
-        genero = ?,
-        descricao_curta = ?,
-        descricao_completa = ?,
-        nota_media = ?,
-        url_imagem = ?
-        WHERE id = ?')
-        """), (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem, id_jogo)
-        cursor.commit()
+        cursor.execute('UPDATE jogos SET nome = ?, ano_lancamento = ?, genero = ?, descricao_curta = ?, descricao_completa = ?, url_imagem = ? WHERE id = ?', 
+                       (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem, id_jogo))
+        conn.commit()
 
 
 
@@ -259,7 +250,7 @@ def profile():
         flash('Você precisa fazer login para acessar esta página.', 'warning')
         return redirect(url_for('login'))
 
-@app.route('/adminpage', methods=['GET', 'POST', 'UPDATE', 'DELETE'])
+@app.route('/adminpage', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def adminpage():
     if request.method == 'POST':
         nome = request.form['nome']
@@ -269,7 +260,6 @@ def adminpage():
         descricao_completa = request.form['descricao_completa']
         url_imagem = request.form['url_imagem']
 
-        # fazer validação dos campos
         if nome == "":
             flash('Preencha o campo Nome!', 'warning')
         elif lancamento == "":
@@ -283,11 +273,11 @@ def adminpage():
         elif url_imagem == "":
             flash('Preencha o campo de URL da imagem!', 'warning')
 
-        #inserção
         create_game(nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
         flash(f'Jogo "{nome}" adicionado com sucesso!', 'success')
             
-    if request.method == 'UPDATE':
+    if request.method == 'PUT':
+        print('ok')
         id = request.form['id']
         nome = request.form['nome']
         lancamento = request.form['lancamento']
@@ -296,7 +286,6 @@ def adminpage():
         descricao_completa = request.form['descricao_completa']
         url_imagem = request.form['url_imagem']
         
-        # fazer validação dos campos
         if id == "":
             flash('Preencha o campo ID!', 'warning')
         elif nome == "":
@@ -312,14 +301,11 @@ def adminpage():
         elif url_imagem == "":
             flash('Preencha o campo de URL da imagem!', 'warning')
 
-        # update 
         update_game(id, nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
         flash(f'Jogo "{nome}" atualizado com sucesso! (ID: {id})', 'success')
-        
-        return 0
 
     games = get_games()
-    return render_template('html/pages/adminpage.html', games=games)
+    return render_template('html/pages/adminpage.html', games = games)
 
 """ @app.route('/submit_data', methods=['POST'])
 def submit_data():
