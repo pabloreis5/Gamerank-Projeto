@@ -102,6 +102,7 @@ def add_avaliacao(user_id, id_jogo, nota, comentario):
         conn.commit()
 
         recalcula_media_de_notas(id_jogo)
+        update_nota_media()
 
 def get_media_de_notas():
     with get_connection() as conn:
@@ -123,6 +124,19 @@ def get_media_de_notas():
             media_por_jogo[id_jogo] = media
     return media_por_jogo
 
+def update_nota_media():
+    media_por_jogo = get_media_de_notas()
+
+    with get_connection() as conn:
+        cur = conn.cursor()
+        for id_jogo, media in media_por_jogo.items():
+            cur.execute("""
+                UPDATE jogos
+                SET nota_media = ?
+                WHERE id = ?
+            """, (media, id_jogo))
+        conn.commit()
+
 def recalcula_media_de_notas(id_jogo):
     with get_connection() as conn:
         cur = conn.cursor()
@@ -139,7 +153,7 @@ def recalcula_media_de_notas(id_jogo):
             UPDATE jogos
             SET nota_media = ?
             WHERE id = ?        
-        """, (nova_media), (id_jogo))
+        """, (nova_media, id_jogo))
         conn.commit()
 
 def get_ranking():
@@ -150,7 +164,7 @@ def get_ranking():
             FROM jogos
             JOIN avaliacao ON jogos.id = avaliacao.id_jogo
             GROUP BY jogos.id
-            ORDER BY media DESC, contagem DESC
+            ORDER BY nota_media DESC, contagem DESC
         """)
         columns = [column[0] for column in cur.description]
         return [dict(zip(columns, row)) for row in cur.fetchall()] 
