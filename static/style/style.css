@@ -690,8 +690,14 @@ a:hover, button:hover {
   outline: none;
 }
 
+
 .administrators {
+<<<<<<< HEAD
   height: 100vh;
+=======
+  display: flex;
+  align-items: center;
+>>>>>>> dc87a028acbf332d9b45ee044b2258e772bcbb27
   background-color: #121212;
 }
 .administrators .forms {
@@ -700,7 +706,39 @@ a:hover, button:hover {
   margin-top: 3rem;
   justify-content: space-around;
 }
+<<<<<<< HEAD
 .administrators .forms form:nth-child(1) h1 {
+=======
+.administrators .forms label {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 1.4rem;
+  margin-top: 1.5rem;
+}
+.administrators .forms input {
+  width: 75%;
+  font-family: "Poppins";
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+  margin-left: 0.6rem;
+}
+.administrators .forms button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
+}
+.administrators .container .forms h1 {
+>>>>>>> dc87a028acbf332d9b45ee044b2258e772bcbb27
   font-family: "Press Start 2P";
   font-size: 2rem;
   color: #2BF6FA;
@@ -783,6 +821,7 @@ a:hover, button:hover {
   font-family: "Poppins";
   color: white;
 }
+<<<<<<< HEAD
 .administrators .deletion table thead tr {
   margin-bottom: 1rem;
 }
@@ -813,3 +852,9 @@ a:hover, button:hover {
   width: 50%;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }/*# sourceMappingURL=style.css.map */
+=======
+.administrators .deletion table thead th {
+  padding-left: 1rem;
+  padding-bottom: 1.4rem;
+}/*# sourceMappingURL=style.css.map */
+>>>>>>> dc87a028acbf332d9b45ee044b2258e772bcbb27

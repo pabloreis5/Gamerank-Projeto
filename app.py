@@ -1,13 +1,12 @@
 import secrets
 from flask import Flask, render_template, request, flash, redirect, url_for, session, abort
+from flask_paginate import Pagination, get_page_args
 import sqlite3
 
 
 app = Flask(__name__, static_url_path='/static')
 # Gera uma chave secreta hexadecimal de 16 bytes (32 caracteres)
 app.secret_key = secrets.token_hex(16)  
-
-
 
 
 # Cria um cursor
@@ -57,6 +56,8 @@ def get_games():
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM jogos')
         games = cursor.fetchall()
+
+
         return games
     
 def get_wishlist_by_user_id(user_id):
@@ -101,15 +102,70 @@ def add_avaliacao(user_id, id_jogo, nota, comentario):
         cursor.execute('INSERT INTO avaliacao (nota, comentario, id_jogo, id_usuario) VALUES (?, ?, ?, ?)', (nota, comentario, id_jogo, user_id))
         conn.commit()
 
+        recalcula_media_de_notas(id_jogo)
+        update_nota_media()
+
+def get_media_de_notas():
+    with get_connection() as conn:
+        cur = conn.cursor()
+        #caso o valor for NULL, substitui por 0
+        cur.execute("""
+            SELECT id_jogo, COALESCE(AVG(nota), 0.0) as media 
+            FROM avaliacao
+            GROUP BY id_jogo
+        """)
+        result = cur.fetchall()
+
+        media_por_jogo = {}
+
+        for row in result:
+            id_jogo = row[0]
+            media = row[1]
+
+            media_por_jogo[id_jogo] = media
+    return media_por_jogo
+
+def update_nota_media():
+    media_por_jogo = get_media_de_notas()
+
+    with get_connection() as conn:
+        cur = conn.cursor()
+        for id_jogo, media in media_por_jogo.items():
+            cur.execute("""
+                UPDATE jogos
+                SET nota_media = ?
+                WHERE id = ?
+            """, (media, id_jogo))
+        conn.commit()
+
+def recalcula_media_de_notas(id_jogo):
+    with get_connection() as conn:
+        cur = conn.cursor()
+        #caso o valor for NULL, substitui por 0
+        cur.execute("""
+            SELECT COALESCE(AVG(nota), 0.0) as media 
+            FROM avaliacao
+            WHERE id_jogo = ?
+        """, (id_jogo,))
+        
+        nova_media = cur.fetchone()[0]
+
+        cur.execute("""
+            UPDATE jogos
+            SET nota_media = ?
+            WHERE id = ?        
+        """, (nova_media, id_jogo))
+        conn.commit()
+
 def get_ranking():
     with get_connection() as conn:
         cur = conn.cursor()
         cur.execute("""
-            SELECT jogos.nome, jogos.url_imagem, jogos.descricao_completa, AVG(avaliacao.nota) as media, COUNT(avaliacao.id_jogo) as contagem
+            SELECT jogos.nome, jogos.url_imagem, jogos.descricao_completa, jogos.nota_media, COUNT(avaliacao.id_jogo) as contagem
             FROM jogos
             JOIN avaliacao ON jogos.id = avaliacao.id_jogo
             GROUP BY jogos.id
-            ORDER BY media DESC, contagem DESC
+            ORDER BY nota_media DESC, contagem DESC
         """)
         columns = [column[0] for column in cur.description]
         return [dict(zip(columns, row)) for row in cur.fetchall()] 
@@ -304,8 +360,8 @@ def adminpage():
         update_game(id, nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
         flash(f'Jogo "{nome}" atualizado com sucesso! (ID: {id})', 'success')
 
-    games = get_games()
-    return render_template('html/pages/adminpage.html', games = games)
+    games = get_games_dict()
+    return render_template('html/pages/adminpage.html', games=games)
 
 """ @app.route('/submit_data', methods=['POST'])
 def submit_data():
