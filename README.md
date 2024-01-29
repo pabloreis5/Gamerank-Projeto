@@ -26,6 +26,8 @@
 
 - `Detalhes do Jogo em Destauqe:` Explore avaliações, comentários e informações abrangentes de cada jogo.
 
+- `Administradores:` Gerencie a plataforma com facilidade, com funções específicas para inserção, atualização e exclusão de jogos.
+
  
 
 ## Layout
