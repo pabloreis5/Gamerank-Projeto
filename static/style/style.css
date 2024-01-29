@@ -690,50 +690,23 @@ a:hover, button:hover {
   outline: none;
 }
 
-
 .administrators {
-  display: flex;
-  align-items: center;
+  height: 100vh;
   background-color: #121212;
 }
 .administrators .forms {
   width: 100%;
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-around;
 }
-.administrators .forms label {
-  width: 100%;
-  font-family: "Poppins";
-  font-size: 1.3rem;
-  color: white;
-  margin-bottom: 1.4rem;
-  margin-top: 1.5rem;
-}
-.administrators .forms input {
-  width: 75%;
-  font-family: "Poppins";
-  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
-  margin-left: 0.6rem;
-}
-.administrators .forms button {
-  margin-top: 4rem;
-  display: block;
-  width: 35%;
-  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
-  font-family: "Poppins";
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
-  border: none;
-  border-radius: 3%;
-  transition: 0.5s;
-}
-.administrators .container .forms h1 {
+.administrators .forms form:nth-child(1) h1 {
   font-family: "Press Start 2P";
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: #2BF6FA;
   margin-bottom: 0.7rem;
 }
-.administrators .forms label {
+.administrators .forms form:nth-child(1) label {
   width: 100%;
   font-family: "Poppins";
   font-size: 1.3rem;
@@ -741,13 +714,13 @@ a:hover, button:hover {
   margin-bottom: 1.4rem;
   margin-top: 1.5rem;
 }
-.administrators .forms input {
-  width: 75%;
+.administrators .forms form:nth-child(1) input {
+  width: 100%;
   font-family: "Poppins";
   padding: 0.4rem 0.4rem 0.4rem 1.4rem;
   margin-left: 0.6rem;
 }
-.administrators .forms button {
+.administrators .forms form:nth-child(1) button {
   margin-top: 4rem;
   display: block;
   width: 35%;
@@ -760,6 +733,43 @@ a:hover, button:hover {
   border: none;
   border-radius: 3%;
   transition: 0.5s;
+}
+.administrators .forms form:nth-child(2) h1 {
+  font-family: "Press Start 2P";
+  font-size: 2rem;
+  color: #2BF6FA;
+  margin-bottom: 0.7rem;
+}
+.administrators .forms form:nth-child(2) label {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 1.4rem;
+  margin-top: 1.5rem;
+}
+.administrators .forms form:nth-child(2) input {
+  width: 100%;
+  font-family: "Poppins";
+  padding: 0.4rem 0.4rem 0.4rem 1.4rem;
+  margin-left: 0.6rem;
+}
+.administrators .forms form:nth-child(2) button {
+  margin-top: 4rem;
+  display: block;
+  width: 35%;
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+  font-family: "Poppins";
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(to right, #2BF6FA, #AB61F5, #580475);
+  border: none;
+  border-radius: 3%;
+  transition: 0.5s;
+}
+.administrators .deletion {
+  padding-bottom: 3rem;
 }
 .administrators .deletion h1 {
   font-family: "Poppins";
@@ -769,10 +779,37 @@ a:hover, button:hover {
 .administrators .deletion table {
   width: 100%;
   margin-top: 3rem;
+  padding-bottom: 3rem;
   font-family: "Poppins";
   color: white;
 }
-.administrators .deletion table thead th {
-  padding-left: 1rem;
-  padding-bottom: 1.4rem;
+.administrators .deletion table thead tr {
+  margin-bottom: 1rem;
+}
+.administrators .deletion table tbody tr {
+  margin-bottom: 1rem;
+  height: 5rem;
+  background-color: #1E1E1E;
+}
+.administrators .deletion table tbody tr td:nth-child(1) {
+  width: 10%;
+  padding-left: 2.5rem;
+  padding-top: -1.5rem;
+}
+.administrators .deletion table tbody tr td:nth-child(2) {
+  width: 10%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.administrators .deletion table tbody tr td:nth-child(2) img {
+  height: 55px;
+  margin-top: 0.3rem;
+  margin-bottom: -1.5rem;
+}
+.administrators .deletion table tbody tr td:nth-child(3) {
+  width: 30%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.administrators .deletion table tbody tr td:nth-child(4) {
+  width: 50%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,5 @@
 import secrets
 from flask import Flask, render_template, request, flash, redirect, url_for, session, abort
-from flask_paginate import Pagination, get_page_args
 import sqlite3
 
 
@@ -179,29 +178,6 @@ def create_game(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descri
                        (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem))
         conn.commit()
 
-def delete_game(id_jogo):
-    with get_connection() as conn:   
-        cursor = conn.cursor()
-        cursor.execute('DELETE FROM jogos WHERE id = ?', (id_jogo)) # definir para apagar com as dependências das foreinkeys que existe
-        conn.commit()
-
-def update_game(id_jogo, nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem):  
-    with get_connection() as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
-        UPDATE jogos
-        SET nome = ?,
-        ano_lancamento = ?,
-        genero = ?,
-        descricao_curta = ?,
-        descricao_completa = ?,
-        nota_media = ?,
-        url_imagem = ?
-        WHERE id = ?')
-        """), (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem, id_jogo)
-        cursor.commit()
-
-
 
 
 
@@ -315,7 +291,7 @@ def profile():
         flash('Você precisa fazer login para acessar esta página.', 'warning')
         return redirect(url_for('login'))
 
-@app.route('/adminpage', methods=['GET', 'POST', 'UPDATE', 'DELETE'])
+@app.route('/adminpage', methods=['GET', 'POST'])
 def adminpage():
     if request.method == 'POST':
         nome = request.form['nome']
@@ -325,7 +301,6 @@ def adminpage():
         descricao_completa = request.form['descricao_completa']
         url_imagem = request.form['url_imagem']
 
-        # fazer validação dos campos
         if nome == "":
             flash('Preencha o campo Nome!', 'warning')
         elif lancamento == "":
@@ -339,40 +314,8 @@ def adminpage():
         elif url_imagem == "":
             flash('Preencha o campo de URL da imagem!', 'warning')
 
-        #inserção
         create_game(nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
         flash(f'Jogo "{nome}" adicionado com sucesso!', 'success')
-            
-    if request.method == 'UPDATE':
-        id = request.form['id']
-        nome = request.form['nome']
-        lancamento = request.form['lancamento']
-        genero = request.form['genero']
-        descricao_curta = request.form['descricao_curta']
-        descricao_completa = request.form['descricao_completa']
-        url_imagem = request.form['url_imagem']
-        
-        # fazer validação dos campos
-        if id == "":
-            flash('Preencha o campo ID!', 'warning')
-        elif nome == "":
-            flash('Preencha o campo Nome!', 'warning')
-        elif lancamento == "":
-            flash('Preencha o campo Ano de lançamento!', 'warning')
-        elif genero == "":
-            flash('Preencha o campo Gênero!', 'warning')
-        elif descricao_curta == "":
-            flash('Preencha o campo Descrição curta!', 'warning')
-        elif descricao_completa == "":
-            flash('Preencha o campo de Descrição completa!', 'warning')
-        elif url_imagem == "":
-            flash('Preencha o campo de URL da imagem!', 'warning')
-
-        # update 
-        update_game(id, nome, lancamento, genero, descricao_curta, descricao_completa, url_imagem)
-        flash(f'Jogo "{nome}" atualizado com sucesso! (ID: {id})', 'success')
-        
-        return 0
 
     games = get_games_dict()
     return render_template('html/pages/adminpage.html', games=games)
@@ -413,7 +356,34 @@ def add_to_wishlist():
 
     return '', 204  # Retorna um status 204 (No Content) para indicar que a operação foi bem-sucedida
 
+@app.route('/delete_game', methods=['DELETE'])
+def delete_game():
+    id_jogo = request.form.get('game_id')
 
+    with get_connection() as conn:   
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM jogos WHERE id = ?', (id_jogo,))
+        conn.commit()
+    
+    return '', 204  # Retorna um status 204 (No Content) para indicar que a operação foi bem-sucedida
+
+@app.route('/update_game', methods=['PUT'])
+def update_game():  
+    id_jogo = request.form.get('game_id')
+    nome_jogo = request.form.get('nome')
+    lancamento_jogo = request.form.get('lancamento')
+    genero_jogo = request.form.get('genero')
+    descricao_curta = request.form.get('descricao_curta')
+    descricao_completa = request.form.get('descricao_completa')
+    url_imagem = request.form.get('url')
+
+    with get_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute('UPDATE jogos SET nome = ?, ano_lancamento = ?, genero = ?, descricao_curta = ?, descricao_completa = ?, url_imagem = ? WHERE id = ?', 
+                       (nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descricao_completa, url_imagem, id_jogo))
+        conn.commit()
+    
+    return '', 204
 
 
 
