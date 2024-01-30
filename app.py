@@ -102,7 +102,6 @@ def add_avaliacao(user_id, id_jogo, nota, comentario):
         conn.commit()
 
         recalcula_media_de_notas(id_jogo)
-        update_nota_media()
 
 def get_media_de_notas():
     with get_connection() as conn:
@@ -122,6 +121,9 @@ def get_media_de_notas():
             media = row[1]
 
             media_por_jogo[id_jogo] = media
+
+            print(media_por_jogo)  # Debug print
+
     return media_por_jogo
 
 def update_nota_media():
@@ -137,6 +139,7 @@ def update_nota_media():
             """, (media, id_jogo))
         conn.commit()
 
+
 def recalcula_media_de_notas(id_jogo):
     with get_connection() as conn:
         cur = conn.cursor()
@@ -149,12 +152,24 @@ def recalcula_media_de_notas(id_jogo):
         
         nova_media = cur.fetchone()[0]
 
+        nova_media = round(nova_media, 2) #arredonda para 2 casas decimais
+
         cur.execute("""
             UPDATE jogos
             SET nota_media = ?
             WHERE id = ?        
         """, (nova_media, id_jogo))
         conn.commit()
+
+def recalcula_media_de_notas_all_games():
+    with get_connection() as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT id FROM jogos")
+        todos_os_ids_de_jogos = cur.fetchall()
+
+        for id_jogo in todos_os_ids_de_jogos:
+            recalcula_media_de_notas(id_jogo[0])
+
 
 def get_ranking():
     with get_connection() as conn:
@@ -182,7 +197,6 @@ def create_game(nome_jogo, lancamento_jogo, genero_jogo, descricao_curta, descri
 
 
 #>>>>>>>>>>ROTAS<<<<<<<<<<<<<
-
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -394,4 +408,5 @@ def update_game():
 
 
 if __name__ == '__main__':
+    recalcula_media_de_notas_all_games()
     app.run(debug=True)
