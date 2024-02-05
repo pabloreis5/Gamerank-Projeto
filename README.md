@@ -33,6 +33,7 @@
 ## Layout
 
 - `cadastro:` http://localhost:5000/register
+  
 ![telacadastro](./static/imgs/tela_cadastro.png)  
 
 - `login:` http://localhost:5000/
