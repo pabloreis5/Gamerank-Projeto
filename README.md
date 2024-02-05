@@ -31,13 +31,26 @@
  
 
 ## Layout
- ![telacadastro](./static/imgs/tela_cadastro.png)  ![telalogin](./static/imgs/tela_login.png)
+- `cadastro:` http://localhost:5000/register
+ ![telacadastro](./static/imgs/tela_cadastro.png)  
 
- ![telainicio](./static/imgs/tela_inicio.png)  ![telacategoria](./static/imgs/tela_categoria.png)
+- `login:` http://localhost:5000/
+![telalogin](./static/imgs/tela_login.png)
 
- ![telarank](./static/imgs/tela_ranqueamento.png) ![telaperfil](./static/imgs/tela_perfil.png)
+- `home:` http://localhost:5000/home
+![telainicio](./static/imgs/tela_inicio.png) 
 
- ![telaadmin](./static/imgs/tela_admin.png)
+- `categoria:` http://localhost:5000/categories
+![telacategoria](./static/imgs/tela_categoria.png)
+
+- `rank:` http://localhost:5000/ranking
+![telarank](./static/imgs/tela_ranqueamento.png) 
+
+- `perfil:` http://localhost:5000/profile
+![telaperfil](./static/imgs/tela_perfil.png)
+
+- `admin:` http://localhost:5000/adminpage
+![telaadmin](./static/imgs/tela_admin.png)
 
 ## Como rodar esse projeto?
 
