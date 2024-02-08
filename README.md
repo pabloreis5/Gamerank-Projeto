@@ -71,7 +71,7 @@
 3. Execute a aplicação:
 
     ```bash
-    python run.py
+    python app.py
     ``` 
  
     
